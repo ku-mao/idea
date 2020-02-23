@@ -5,22 +5,31 @@ import org.junit.Test;
 public class RegexTest {
 
 /*
- * \\d{11}匹配11位数字
+ *  match()方法返回的是Boolean值
  */
     @Test
     public void test1(){
-        String regx = "\\d{11}";
-        String str = "1234567898";
-        System.out.println(str.matches(regx));//返回的是Boolean值
+        String regx = "hello";
+        String str = "Hello";
+        System.out.println(str.matches(regx));//false
+        str = "hello12";
+        System.out.println(str.matches(regx));//false
+        str = "hello";
+        System.out.println(str.matches(regx));//true
     }
 
-    // []方括号表示在括号里面的只匹配一个
-    // 表达式写在方括号里
+     //[]方括号表示在括号里面的只匹配一个
+    //[^ ] 是不匹配
      @Test
     public void test2(){
         String regx = "[a-zA-Z0-9]ello";
         String str = "Hello";
         System.out.println(str.matches(regx));//true
+        regx = "[^0-9]{1,5}";
+        str = "dai";
+        System.out.println(str.matches(regx));//true
+        str = "9d";
+        System.out.println(str.matches(regx));//false
     }
 
 
@@ -89,6 +98,78 @@ public class RegexTest {
         System.out.println(str.matches(regx));//false
     }
 
-    
+
+    /*
+     * 简写
+     * \d 匹配数字[0-9]
+     * \D 不匹配数字[^0-9]
+     * \w 匹配字符包括下划线[0-9a-zA-Z_]
+     * \W 不匹配字符[^0-9a-zA-Z_]
+     * \f 匹配一个换页符
+     * \n 匹配一个换行符
+     * \r 匹配一个回车符
+     * \s 匹配任何不可见字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。
+     * \S 匹配任何可见字符。等价于[^ \f\n\r\t\v]
+     */
+    @Test
+    public void test9() {
+        String regx = "\\d{2,}";
+        String str = "987";
+        System.out.println(str.matches(regx));//true
+        str = "9dd";
+        System.out.println(str.matches(regx));//false
+        regx = "\\D{2,}";
+         str = "asd";
+        System.out.println(str.matches(regx));//true
+        str = "9dd";
+        System.out.println(str.matches(regx));//false
+        regx = "\\w{2,}";
+        str = "asd";
+        System.out.println(str.matches(regx));//true
+        str = "@dd";
+        System.out.println(str.matches(regx));//false
+         regx = "\\W{2,}";
+        str = "@%@";
+        System.out.println(str.matches(regx));//true
+        str = "9dd";
+        System.out.println(str.matches(regx));//false
+    }
+
+   /*
+    * 匹配特殊字符
+    * 转义符\ 在字符串里\\ 代表\
+    * 在匹配规则里面 \\ 代表转义符
+    * \/ 匹配/
+    * \[ 匹配 [
+    * \] 匹配 ]
+    */
+    @Test
+    public void test10(){
+        String regx = "\\\\\\/\\[\\]";
+        String str = "\\/[]";
+        System.out.println(str.matches(regx));//true
+    }
+
+    /**
+     * 分组、或
+     * 分组用()
+     */
+    @Test
+    public void test11(){
+        String regx = "(\\(0\\d{2}\\)|0\\d{2})( |_|-)\\d{7,8}";
+        String str = "029 23345623";
+        System.out.println(str.matches(regx));//true
+        str = "029-23345623";
+        System.out.println(str.matches(regx));//true
+        str = "029_23345623";
+        System.out.println(str.matches(regx));//true
+
+    }
+
+
+    //定位符用来描述字符串或单词的边界，^ 和 $ 分别指字符串的开始与结束，
+    // \b 描述单词的前或后边界，\B 表示非单词边界。
+   //不能将限定符与定位符一起使用。不允许诸如 ^* 之类的表达式。
+
 
 }
