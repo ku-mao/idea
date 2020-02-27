@@ -59,5 +59,36 @@ public class 集合 {
         System.out.println(a.get(4));
         a.remove(4);
         System.out.println(a.get(4));
+
+        Node head = new Node();
+        head.setData(20);
+        Node n = new Node();
+        n.setData(50);
+        head.setNext(n);
+        n = new Node();
+        n.setData(66);
+        head.getNext().setNext(n);
+        System.out.println(head.getNext().getNext().getData());
+    }
+
+}
+class Node{
+    private int data;
+    private Node next;
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
     }
 }
