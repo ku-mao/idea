@@ -60,35 +60,15 @@ public class 集合 {
         a.remove(4);
         System.out.println(a.get(4));
 
-        Node head = new Node();
-        head.setData(20);
-        Node n = new Node();
-        n.setData(50);
-        head.setNext(n);
-        n = new Node();
-        n.setData(66);
-        head.getNext().setNext(n);
-        System.out.println(head.getNext().getNext().getData());
+        LinkedList b = new LinkedList();
+        b.add(20);
+        b.add(45);
+        b.add(98);
+
+        b.remove(2);
+
+        System.out.println( b.get(2));
     }
 
 }
-class Node{
-    private int data;
-    private Node next;
 
-    public int getData() {
-        return data;
-    }
-
-    public void setData(int data) {
-        this.data = data;
-    }
-
-    public Node getNext() {
-        return next;
-    }
-
-    public void setNext(Node next) {
-        this.next = next;
-    }
-}
