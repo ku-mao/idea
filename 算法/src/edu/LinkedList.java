@@ -1,15 +1,15 @@
 package edu;
 
-public class LinkedList {
+public class LinkedList implements List{
    private class Node{
-        private int data;
+        private Object data;
         private Node next;
 
-        public int getData() {
+        public Object getData() {
             return data;
         }
 
-        public void setData(int data) {
+        public void setData(Object data) {
             this.data = data;
         }
 
@@ -26,7 +26,7 @@ public class LinkedList {
     private int size = 0;
 
     //添加元素
-    public void add(int d) {
+    public void add(Object d) {
         Node n = new Node();
         n.setData(d);
         if(head == null){
@@ -42,7 +42,7 @@ public class LinkedList {
     }
 
     //查找元素
-    public  Integer get(int i ){
+    public  Object get(int i ){
         if(i==0) return head.getData();
         if(i < 0 || i >= size) return  null;
         else{
@@ -54,6 +54,41 @@ public class LinkedList {
             return temp.getData();
         }
     }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public Iterator iterator() {
+
+        Iterator iterator = new Iterator() {
+            int i = 0;
+            @Override
+            public boolean hasNext() {
+                if(i < size) return true;
+                return false;
+            }
+
+            @Override
+            public Object next() {
+                Object o = null;
+                if(i == 0) o = head.data;
+                else {
+                    Node temp = head;
+                    for(int t = 0;t < i; t++){
+                        temp = temp.next;
+                    }
+                    o = temp.data;
+                }
+                i++;
+                return o;
+            }
+        };
+        return iterator;
+    }
+
 
     //删除元素
     public void remove(int i) {
