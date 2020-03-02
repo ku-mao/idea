@@ -1,4 +1,4 @@
-package edu;
+package edu.集合;
 
 public class 集合 {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package edu;
+package edu.集合;
 
-public class ArrayList implements List{
+public class ArrayList implements List {
     int length = 10;
     Object[] data = new Object[length];
     int size = 0;

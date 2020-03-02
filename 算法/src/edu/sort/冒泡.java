@@ -1,4 +1,4 @@
-package edu;
+package edu.sort;
 
 public class 冒泡 {
     public static void main(String[] args) {

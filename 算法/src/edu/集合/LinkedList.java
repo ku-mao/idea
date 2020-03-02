@@ -1,6 +1,7 @@
-package edu;
+package edu.集合;
 
-public class LinkedList implements List{
+
+public class LinkedList implements List {
    private class Node{
         private Object data;
         private Node next;

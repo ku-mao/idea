@@ -1,4 +1,4 @@
-package edu;
+package edu.集合;
 
 public interface Iterator {
     public boolean hasNext();
