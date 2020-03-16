@@ -1,6 +1,6 @@
 package edu.sort;
 
-public class 冒泡 {
+public class 冒泡排序 {
     public static void main(String[] args) {
         int a[] = {23,67,4,2,34,55,66};
         for(int k = 1 ; k <a.length -1 ;k++){
