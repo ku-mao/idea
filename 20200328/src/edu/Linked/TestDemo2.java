@@ -6,6 +6,25 @@ class Person {
 
 public class TestDemo2 {
 
+    public static Node mergeTwoLists(Node headA, Node headB) {
+        Node newHead = new Node(-1);
+        Node tmp =  newHead;
+        while (headA != null && headB != null) {
+            if (headA.data < headB.data) {
+                tmp.next = headA;
+                headA = headA.next;
+            }
+            else {
+                tmp.next = headB;
+                headB = headB.next;
+            }
+            tmp = tmp.next;
+        }
+        //2、第一步完成后   其中一个单链表不为空  一个为空
+        tmp.next = headA == null ? headB : headA;
+        return newHead.next;
+    }
+
     public static Node getIntersectionNode(Node headA, Node headB) {
         if(headA == null || headB == null) {
             return null;
@@ -58,6 +77,23 @@ public class TestDemo2 {
         MyLinedList myLinedList = new MyLinedList();
         myLinedList.addLast(2);
         myLinedList.addLast(15);
+        myLinedList.addLast(21);
+        myLinedList.addLast(31);
+        myLinedList.addLast(36);
+        MyLinedList myLinedList2 = new MyLinedList();
+        myLinedList2.addLast(1);
+        myLinedList2.addLast(5);
+        myLinedList2.addLast(11);
+        myLinedList2.addLast(99);
+        myLinedList2.addLast(100);
+        //Node node = mergeTwoLists(myLinedList,myLinedList2);
+
+    }
+
+    public static void main3(String[] args) {
+        MyLinedList myLinedList = new MyLinedList();
+        myLinedList.addLast(2);
+        myLinedList.addLast(15);
         myLinedList.addLast(1);
         myLinedList.addLast(3);
         myLinedList.addLast(6);
@@ -65,6 +101,7 @@ public class TestDemo2 {
         System.out.println("========基准=======");
         Node newHead = myLinedList.partition(4);
         myLinedList.display2(newHead);
+
 
 
         /*Node cur = myLinedList.findKthToTail(13);

@@ -233,7 +233,7 @@ public class MyLinedList {
                 fast = fast.next;
                 k--;
             }else {
-                System.out.println("没有改节点!");
+                System.out.println("没有该节点!");
                 return null;
             }
         }
