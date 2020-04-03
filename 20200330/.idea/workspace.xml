@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8699ae4f-a830-44fe-9b45-8072f33b9ef4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/src3/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src3/TestMain.java" afterDir="false" />
-    </list>
+    <list default="true" id="8699ae4f-a830-44fe-9b45-8072f33b9ef4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +13,7 @@
     <session id="-2001941112">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -71,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/src/src3/TestMain.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="700">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#143#144#0" expanded="true" />
                 <element signature="e#207#208#0" expanded="true" />
@@ -142,7 +141,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="795" />
     <option name="y" value="105" />
     <option name="width" value="854" />
@@ -191,7 +190,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585741213560" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585742785450" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -262,16 +261,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585563048042</updated>
-      <workItem from="1585563053661" duration="16435000" />
+      <workItem from="1585563053661" duration="17079000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16435000" />
+    <option name="totallyTimeSpent" value="17079000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="636" y="84" width="683" height="757" extended-state="1" />
-    <editor active="true" />
+    <frame x="636" y="84" width="683" height="757" extended-state="0" />
     <layout>
       <window_info content_ui="combo" x="0" y="23" width="1536" height="801" id="Project" order="0" sideWeight="0.48028675" weight="0.4368" />
       <window_info id="Designer" order="1" />
@@ -389,7 +387,7 @@
     <entry file="file://$PROJECT_DIR$/src/src3/TestMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#143#144#0" expanded="true" />
             <element signature="e#207#208#0" expanded="true" />

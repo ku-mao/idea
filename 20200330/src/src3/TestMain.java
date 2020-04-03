@@ -23,7 +23,7 @@ class Bird extends  Animal {
     public void eat() {
         System.out.println("Bird" + this.name + "正在吃米！");
     }
-    
+
     public void fly() {
         System.out.println(this.name + "正在飞");
     }
