@@ -1,4 +1,4 @@
-package edu;
+package edu.nowcoder;
 
 import java.util.Scanner;
 /**输入一个整数，将这个整数以字符串的形式逆序输出

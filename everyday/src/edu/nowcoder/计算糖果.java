@@ -1,4 +1,4 @@
-package edu;
+package edu.nowcoder;
 import  java.util.Scanner;
 public class 计算糖果 {
         public static void main(String[] args){

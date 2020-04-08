@@ -1,4 +1,4 @@
-package edu;
+package edu.nowcoder;
 
 import java.util.Scanner;
 //最小公倍数等于两个数的乘积/最大公因数

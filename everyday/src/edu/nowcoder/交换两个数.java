@@ -1,4 +1,4 @@
-package edu;
+package edu.nowcoder;
 
 import java.util.Scanner;
 //不借助第三个数 去交换2个数的值

@@ -1,4 +1,4 @@
-package edu;
+package edu.nowcoder;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
