@@ -6,11 +6,53 @@ import java.util.Scanner;
 
 public class Practice {
     /**
+     * 编写代码模拟三次密码输入的场景。
+     * 最多能输入三次密码，密码正确，提示“登录成功”,
+     * 密码错误， 可以重新输入，最多输入三次。
+     * 三次均错，则提示退出程序
+     */
+    public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String password = "12345";
+            System.out.println("请输入密码,有三次机会:");
+            int count = 3;
+            while (count > 0){
+                String str = scanner.nextLine();
+                if (password.equals(str)) {
+                    System.out.println("密码正确,登录成功!");
+                    break;
+                } else {
+                    count--;
+                    if (count == 0){
+                        System.out.println("三次输错密码 退出");
+                    }else {
+                        System.out.println("密码错误,你还有" + count +"次机会");
+                    }
+                }
+            }
+    }
+
+
+
+    /**
+     * 输出一个整数的每一位，如：123的每一位是1 ， 2 ， 3
+     *
+     */
+    public static void main12(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n =  scanner.nextInt();
+        while (n > 0) {
+            System.out.print(n % 10 + " ");
+            n = n / 10;
+        }
+    }
+
+    /**
      * 获取一个数二进制序列中所有的偶数位和奇数位，
      * 分别输出二进制序列
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main11(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         System.out.print("偶数位: ");
@@ -147,7 +189,9 @@ public class Practice {
      * @param args
      */
     public static void main4(String[] args) {
-        for (int i = 1; i <= 9; i++ ) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        for (int i = 1; i <= n; i++ ) {
             for (int j = 1; j <= i; j++){
                 System.out.print(j +"x" + i +"=" + j*i +" ");
             }
