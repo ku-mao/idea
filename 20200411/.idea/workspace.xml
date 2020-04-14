@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd721ff0-d215-41e4-b3f7-ba4494390f06" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200308/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200308/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200308/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200308/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200308/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200308/20200308.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200308/src/edu/TestDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/TestList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/TestList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Factory/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Factory/config.xml" beforeDir="false" />
     </list>
@@ -19,6 +24,7 @@
     <session id="1524510147">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -36,12 +42,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="java" value="4202" />
+          <entry key="java" value="4207" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4202" />
+          <entry key="JAVA" value="4207" />
           <entry key="PLAIN_TEXT" value="11" />
         </counts>
       </usages-collector>
@@ -67,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/TestList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2380">
-              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            <state relative-caret-position="140">
+              <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1444#1445#0" expanded="true" />
@@ -90,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/A.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="616">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#72#73#0" expanded="true" />
                 <element signature="e#114#115#0" expanded="true" />
@@ -127,8 +133,8 @@
         <option value="$PROJECT_DIR$/src/edu/Pratice.java" />
         <option value="$PROJECT_DIR$/src/edu/Practice.java" />
         <option value="$PROJECT_DIR$/src/edu/Poker.java" />
-        <option value="$PROJECT_DIR$/src/edu/TestList.java" />
         <option value="$PROJECT_DIR$/src/edu/A.java" />
+        <option value="$PROJECT_DIR$/src/edu/TestList.java" />
       </list>
     </option>
   </component>
@@ -147,9 +153,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="997" />
-    <option name="y" value="77" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="967" />
+    <option name="y" value="165" />
     <option name="width" value="838" />
     <option name="height" value="897" />
   </component>
@@ -180,13 +186,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="edu" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="20200411" type="b2602c69:ProjectViewProjectNode" />
-              <item name="20200411" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="edu" type="462c0819:PsiDirectoryNode" />
-              <item name="MyArrayList.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -197,7 +196,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586852864718" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586858987105" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -295,18 +294,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586612516027</updated>
-      <workItem from="1586612520926" duration="30779000" />
+      <workItem from="1586612520926" duration="32962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30779000" />
+    <option name="totallyTimeSpent" value="32962000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="798" y="62" width="670" height="717" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="0" y="23" width="1536" height="801" id="Project" order="0" sideWeight="0.48028675" weight="0.29575163" />
+      <window_info content_ui="combo" x="0" y="23" width="1536" height="801" id="Project" order="0" sideWeight="0.48028675" weight="0.2955764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -316,7 +315,7 @@
       <window_info x="694" y="559" width="224" height="231" id="Web" order="7" sideWeight="0.5197133" side_tool="true" type="WINDOWED" visible="true" weight="0.23382045" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" x="23" y="618" width="1492" height="238" id="Run" order="2" visible="true" weight="0.26712328" />
+      <window_info anchor="bottom" x="23" y="618" width="1492" height="238" id="Run" order="2" weight="0.2212766" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -394,18 +393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/TestList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2380">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1444#1445#0" expanded="true" />
-            <element signature="e#1471#1472#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/Wrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -416,12 +403,24 @@
     <entry file="file://$PROJECT_DIR$/src/edu/A.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#72#73#0" expanded="true" />
             <element signature="e#114#115#0" expanded="true" />
             <element signature="e#133#134#0" expanded="true" />
             <element signature="e#169#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/TestList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1444#1445#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
           </folding>
         </state>
       </provider>
