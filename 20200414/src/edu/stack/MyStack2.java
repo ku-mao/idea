@@ -13,39 +13,25 @@ public class MyStack2 {
     //链表头部表示栈顶,链表尾部表示栈底
 
     Node head = new Node(-1);
-    int size = 0;
-    public void push(Node node) {
-        if(head == null) {
-            head = node;
-            return;
-        }
-        Node tmp = head;
-        head = node;
-        head.next = tmp;
+    public void push(int value) {
+        Node newNode = new Node(value);
+        newNode.next = head.next;
+        head.next = newNode;
     }
 
-    public Node peek(){
-        if(size <= 0) {
+    public Integer peek(){
+        if(head.next == null) {
             return null;
         }
-        return null;
+        return head.next.val;
     }
-    public Node pop() {
-        if(size <= 0) {
-            return null;
+    public Integer pop() {
+        Node toDel = head.next;
+        if(toDel == null) {
+            return  null;
         }
-        return null;
+        head.next = toDel.next;
+        return toDel.val;
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }

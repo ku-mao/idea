@@ -13,12 +13,20 @@ public class MyQueue2 {
     private Node head = new Node(-1);
     private Node tail = head;
 
+    /**
+     * 入队列 尾插
+     * @param val
+     */
     public void offer(int val) {
         Node node = new Node(val);
         tail.next = node;
-        tail = node;
+        tail = tail.next;
     }
 
+    /**
+     * 出队列 头删
+     * @return
+     */
     public Integer poll() {
         if (head.next == null) {
             return null;
@@ -26,6 +34,8 @@ public class MyQueue2 {
         Node toDel = head.next;
         head.next = toDel.next;
         if (head.next == null) {
+            //队列为空
+            //让tail重新指向傀儡结点
             tail = head;
         }
         return toDel.val;
