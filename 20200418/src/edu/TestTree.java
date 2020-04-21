@@ -1,5 +1,8 @@
 package edu;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TestTree {
      static class Node {
         public Node left;
@@ -145,28 +148,52 @@ public class TestTree {
          return find(root.right,toFind);
      }
 
+    /**
+     * 层序遍历
+     */
+    public  static void levelOrder(Node root) {
+        if(root == null) {
+            return;
+        }
+        Queue<Node> queue = new LinkedList <>();
+        queue.offer(root);
 
+        while (!queue.isEmpty()) {
+            Node cur = queue.poll();
+            System.out.print(cur.val +" ");
+            if(cur.left != null) {
+                queue.offer(cur.left);
+            }
+            if(cur.right != null) {
+                queue.offer(cur.right);
+            }
+        }
+    }
 
 
     public static void main(String[] args) {
         Node root = build();
-        System.out.println("前序遍历:");
-        preOrder(root);
-        System.out.println();
-        System.out.println("中序遍历:");
-        inOrder(root);
-        System.out.println();
-        System.out.println("后序遍历:");
-        lastOrder(root);
-        System.out.println();
-        System.out.println("树中节点数;");
-        System.out.println(size(root));
-        System.out.println("树中叶子节点个数;");
-        System.out.println(leafSize(root));
-        System.out.println("第k层结点的个数:");
-        System.out.println(kLevelSize(3, root));
-        System.out.println("在树中查找结点:");
-        System.out.println(find(root,'G'));
+//        System.out.println("前序遍历:");
+//        preOrder(root);
+//        System.out.println();
+//        System.out.println("中序遍历:");
+//        inOrder(root);
+//        System.out.println();
+//        System.out.println("后序遍历:");
+//        lastOrder(root);
+//        System.out.println();
+
+//        System.out.println("树中节点数;");
+//        System.out.println(size(root));
+//        System.out.println("树中叶子节点个数;");
+//        System.out.println(leafSize(root));
+//        System.out.println("第k层结点的个数:");
+//        System.out.println(kLevelSize(3, root));
+//        System.out.println("在树中查找结点:");
+//        System.out.println(find(root,'G'));
+
+        System.out.println("层序遍历:");
+        levelOrder(root);
 
     }
 }
