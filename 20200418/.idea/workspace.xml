@@ -19,7 +19,7 @@
     <session id="148915595">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -39,12 +39,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="java" value="3094" />
+          <entry key="java" value="3096" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3094" />
+          <entry key="JAVA" value="3096" />
           <entry key="PLAIN_TEXT" value="18" />
         </counts>
       </usages-collector>
@@ -55,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/TestTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="151" column="11" selection-start-line="151" selection-start-column="11" selection-end-line="151" selection-end-column="11" />
+            <state relative-caret-position="616">
+              <caret line="162" column="28" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,9 +114,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1117" />
-    <option name="y" value="323" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1063" />
+    <option name="y" value="161" />
     <option name="width" value="903" />
     <option name="height" value="783" />
   </component>
@@ -157,7 +157,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587476569064" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587476581393" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -209,18 +209,17 @@
       <updated>1587182724820</updated>
       <workItem from="1587182738809" duration="842000" />
       <workItem from="1587277152375" duration="10942000" />
-      <workItem from="1587441390372" duration="10745000" />
+      <workItem from="1587441390372" duration="11334000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22529000" />
+    <option name="totallyTimeSpent" value="23118000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="851" y="129" width="722" height="626" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" x="0" y="23" width="1536" height="801" id="Project" order="0" sideWeight="0.48028675" weight="0.36445785" />
+      <window_info active="true" content_ui="combo" x="0" y="23" width="1536" height="801" id="Project" order="0" sideWeight="0.48028675" visible="true" weight="0.36445785" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -230,7 +229,7 @@
       <window_info x="694" y="559" width="224" height="231" id="Web" order="7" sideWeight="0.5197133" side_tool="true" type="WINDOWED" visible="true" weight="0.23382045" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30229226" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43204868" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -282,8 +281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/TestTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="151" column="11" selection-start-line="151" selection-start-column="11" selection-end-line="151" selection-end-column="11" />
+        <state relative-caret-position="616">
+          <caret line="162" column="28" selection-start-line="162" selection-start-column="28" selection-end-line="162" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
