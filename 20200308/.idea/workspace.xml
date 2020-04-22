@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4de4674c-7e3a-43c6-9efc-2d9b6332da04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/Overload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/Practice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../20200418/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../20200418/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4de4674c-7e3a-43c6-9efc-2d9b6332da04" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +13,7 @@
     <session id="1816803517">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.6" value="2" />
@@ -53,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/edu/TestDemo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="186">
-              <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="31" />
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="31" />
               <folding>
                 <element signature="e#659#660#0" expanded="true" />
                 <element signature="e#697#698#0" expanded="true" />
@@ -68,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/src/edu/TestDemo2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="e#349#350#0" expanded="true" />
                 <element signature="e#377#378#0" expanded="true" />
@@ -90,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/src/edu/TestDemo4.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
               <folding>
                 <element signature="e#626#627#0" expanded="true" />
                 <element signature="e#686#687#0" expanded="true" />
@@ -103,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/edu/Practice.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1960">
-              <caret line="70" column="21" lean-forward="true" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+              <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -111,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/Overload.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="261">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="e#106#107#0" expanded="true" />
                 <element signature="e#134#135#0" expanded="true" />
@@ -168,9 +163,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="963" />
-    <option name="y" value="196" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="858" />
+    <option name="y" value="247" />
     <option name="width" value="903" />
     <option name="height" value="783" />
   </component>
@@ -231,7 +226,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587542616547" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587542649377" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -347,16 +342,15 @@
       <workItem from="1586858182508" duration="5017000" />
       <workItem from="1587202644183" duration="5156000" />
       <workItem from="1587299659535" duration="6701000" />
-      <workItem from="1587537370111" duration="4995000" />
+      <workItem from="1587537370111" duration="5333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21869000" />
+    <option name="totallyTimeSpent" value="22207000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="687" y="198" width="722" height="626" extended-state="0" />
     <layout>
       <window_info auto_hide="true" content_ui="combo" x="0" y="23" width="1536" height="801" id="Project" order="0" sideWeight="0.48028675" weight="0.25737265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -368,7 +362,7 @@
       <window_info x="694" y="559" width="224" height="231" id="Web" order="7" sideWeight="0.5197133" side_tool="true" type="WINDOWED" visible="true" weight="0.23382045" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13900709" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19878297" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -408,7 +402,7 @@
     <entry file="file://$PROJECT_DIR$/src/edu/TestDemo4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding>
             <element signature="e#626#627#0" expanded="true" />
             <element signature="e#686#687#0" expanded="true" />
@@ -419,14 +413,14 @@
     <entry file="file://$PROJECT_DIR$/src/edu/Practice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1960">
-          <caret line="70" column="21" lean-forward="true" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/TestDemo2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="e#349#350#0" expanded="true" />
             <element signature="e#377#378#0" expanded="true" />
@@ -437,7 +431,7 @@
     <entry file="file://$PROJECT_DIR$/src/edu/TestDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
-          <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="31" />
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="31" />
           <folding>
             <element signature="e#659#660#0" expanded="true" />
             <element signature="e#697#698#0" expanded="true" />
@@ -449,8 +443,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/Overload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="261">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="e#106#107#0" expanded="true" />
             <element signature="e#134#135#0" expanded="true" />
