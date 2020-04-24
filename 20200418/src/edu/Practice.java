@@ -1,7 +1,9 @@
 package edu;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Practice {
     public class TreeNode {
@@ -137,5 +139,45 @@ public class Practice {
 
         return (leftDepth - rightDepth <= 1 && leftDepth - rightDepth >= -1)
                 && isBalanced(root.left) && isBalanced(root.right);
+    }
+
+
+    /**
+     * 是否为完全二叉树
+     * @param root
+     * @return
+     */
+    public boolean isComplete(TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        //为true表示当前在第一阶段,为false 表示第二阶段
+        boolean isFirstStep = true;
+        //针对树进行层序遍历
+        Queue<TreeNode> queue = new LinkedList <>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            if(isFirstStep) {
+                if(cur.left != null && cur.right != null) {
+                    queue.offer(cur.left);
+                    queue.offer(cur.right);
+                } else if(cur.left == null && cur.right != null) {
+                    return false;
+                } else if(cur.left != null && cur.right == null) {
+                    isFirstStep = false;
+                    queue.offer(cur.left);
+                } else {
+                    isFirstStep = false;
+                }
+            } else {
+                if(cur.left != null || cur.right != null) {
+                    return false;
+                }
+            }
+        }
+        //没有找到反例证明他不是完全二叉树
+        return true;
     }
 }
