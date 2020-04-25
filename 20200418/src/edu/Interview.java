@@ -1,5 +1,7 @@
 package edu;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Interview {
@@ -13,11 +15,17 @@ public class Interview {
         }
     }
 
+    /**
+     * 根据带有空结点的先序遍历构建一棵树,输出他的中序遍历结果
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
             //先根据先序遍历构建树
-            TreeNode root = build(sc.nextLine());
+           // TreeNode root = build(sc.nextLine());
+            index = 0;
+            TreeNode root = createTree(sc.nextLine());
             //再进行中序遍历
             inOrder(root);
             System.out.println();
@@ -25,10 +33,10 @@ public class Interview {
     }
 
     private static int index;
-    private static TreeNode build(String line) {
-        index = 0;
-        return createTree(line);
-    }
+//    private static TreeNode build(String line) {
+//        index = 0;
+//        return createTree(line);
+//    }
 
     private static TreeNode createTree(String line) {
         char c = line.charAt(index);
@@ -52,6 +60,8 @@ public class Interview {
         System.out.print(root.val + " ");
         inOrder(root.right);
     }
+
+
 }
 
 
