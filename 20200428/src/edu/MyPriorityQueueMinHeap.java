@@ -1,6 +1,6 @@
 package edu;
 
-public class MyPriorityQueue {
+public class MyPriorityQueueMinHeap {
     private int[] array = new int[100];
     private int size = 0;
 
@@ -21,7 +21,7 @@ public class MyPriorityQueue {
         //调整到这里已经到顶了
         while (child > 0){
             //比较当前child和parent 之间的大小关系,看看是否符合大堆
-            if(array[parent] < array[child]) {
+            if(array[parent] > array[child]) {
                 //交换父子元素的内容
                 int tmp = array[parent];
                 array[parent] = array[child];
@@ -57,7 +57,7 @@ public class MyPriorityQueue {
                 child = child + 1;
             }
 
-            if (arr[child] > arr[parent]) {
+            if (arr[child] < arr[parent]) {
                 int tmp = arr[child];
                 arr[child] = arr[parent];
                 arr[parent] = tmp;
@@ -79,7 +79,7 @@ public class MyPriorityQueue {
         return size == 0;
     }
     public static void main(String[] args)  {
-        MyPriorityQueue queue = new MyPriorityQueue();
+        MyPriorityQueueMinHeap queue = new MyPriorityQueueMinHeap();
         queue.offer(9);
         queue.offer(5);
         queue.offer(2);

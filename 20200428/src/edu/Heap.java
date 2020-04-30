@@ -6,7 +6,7 @@ public class Heap {
     //堆是一个完全二叉树,通常使用数组来表示
     //数组中那些元素是堆[0,size)
     //index 表示从哪个下标出发进行调整
-    public static void shiftDown(int[] arr, int index, int size) {
+    public static void shiftDown(int[] arr, int size, int index) {
         int parent = index;
         //根据父节点下标,先找到左子树的下标
         int child = 2 * parent + 1;
@@ -19,7 +19,7 @@ public class Heap {
             }
 
             //child 经过上面的条件,已经不知道指向parent左子树还是右子树了
-            //child 肯定是 左右子树中值比较大的那个
+            //但child 肯定是 左右子树中值比较大的那个
 
 
             //接下来就可以拿刚才child位置的元素和parent 进行对比了,看看是否符合大堆的要求
@@ -40,7 +40,7 @@ public class Heap {
 
     public static void creatHeap(int[] arr, int size) {
         for(int i = (size - 1 -1) / 2; i >= 0; i--) {
-            shiftDown(arr, i, size);
+            shiftDown(arr, size, i);
         }
     }
 
