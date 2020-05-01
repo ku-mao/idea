@@ -18,7 +18,7 @@ public class Practice {
         }
     }
 
-    public List<List<Integer>> kSmallestPairs(int[] num1, int[] num2, int k) {
+    public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
         List<List<Integer>> result = new ArrayList <>();
         if(k <= 0) {
             return result;
@@ -31,9 +31,9 @@ public class Practice {
                 return o1.sum - o2.sum;
             }
         });
-        for(int i = 0; i < num1.length; i++) {
-            for (int j = 0; j < num2.length; j++) {
-                queue.offer(new Pair(num1[i], num2[j]));
+        for(int i = 0; i < nums1.length; i++) {
+            for (int j = 0; j < nums2.length; j++) {
+                queue.offer(new Pair(nums1[i], nums2[j]));
             }
         }
 
