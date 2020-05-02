@@ -45,7 +45,8 @@ public class Sort {
 
     public static void main(String[] args) {
         int[] array = {2, 6, 4, 3, 9, 7, 5};
-        insertSort(array);
+        //insertSort(array);
+        shellSort(array);
         for (int a :array) {
             System.out.print(a + " ");
         }
