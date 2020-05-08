@@ -1,5 +1,7 @@
 package edu.sort;
 
+import java.util.Arrays;
+
 public class Sort {
     /**
      * 插入排序
@@ -57,8 +59,8 @@ public class Sort {
      * @param array
      */
     private static void selectSort(int[] array) {
-        for(int bound = 0; bound < array.length; bound++) {
-            for(int cur = bound; cur < array.length; cur++) {
+        for(int bound = 0; bound < array.length - 1; bound++) {
+            for(int cur = bound + 1; cur < array.length; cur++) {
                 if(array[cur] < array[bound]) {
                     swap(array, cur, bound);
                 }
@@ -81,33 +83,95 @@ public class Sort {
         //建立堆
         creatHeap(array);
         int heapSize = array.length;
-        for( int i = 0; i < array.length; i++) {
-            //交换对顶元素和堆中的最后一个元素
+        for( int i = 0; i < array.length - 1; i++) {
+            //交换堆顶元素和堆中的最后一个元素
             swap(array, 0, heapSize - 1);
+            //删除堆中最后一个元素
             heapSize--;
 
-            //向下调整
-            shiftDown(array, heapSize, i);
+            //针对当前堆从根节点进行向下调整
+            shiftDown(array, heapSize, 0);
         }
     }
 
-    private static void shiftDown(int[] array, int heapSize, int i) {
-
+    private static void shiftDown(int[] array, int size, int index) {
+        int parent = index;
+        int child = 2 * parent + 1;
+        while (child < size) {
+            //找出左右孩子中的最大值,然后与父节点进行比较
+            if(child + 1 < size && array[child + 1] > array[child]) {
+                child = child + 1;
+            }
+            if (array[child] > array[parent]) {
+                swap(array, parent, child);
+            } else {
+                break;
+            }
+            parent = child;
+            child = 2 * parent + 1;
+        }
     }
 
     private static void creatHeap(int[] array) {
-        for(int i = (array.length - 1 - 1) / 2; i >= 0; i++) {
+        for(int i = (array.length - 1 - 1) / 2; i >= 0; i--) {
             shiftDown(array, array.length, i);
         }
     }
 
 
-    public static void main(String[] args) {
-        int[] array = {2, 6, 4, 3, 9, 7, 5};
-        //insertSort(array);
-        shellSort(array);
-        for (int a :array) {
-            System.out.print(a + " ");
+    /**
+     * 冒泡排序
+     * @param array
+     */
+    private static void bubbleSort(int[] array) {
+        for(int bound = 0; bound < array.length - 1; bound++) {
+            for (int cur = array.length - 1; cur > bound; cur--) {
+                if(array[cur] < array[cur - 1]) {
+                    swap(array, cur,cur - 1);
+                }
+            }
         }
+    }
+
+
+    private static void quickSort(int[] array) {
+        quickSortHelper(array,0, array.length -1);
+    }
+
+    private static void quickSortHelper(int[] array, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int index = partition(array, left, right);
+        quickSortHelper(array, left, index - 1);
+        quickSortHelper(array, index + 1, right);
+    }
+
+    private static int partition(int[] array, int left, int right) {
+        int base = array[right];
+        int i = left;
+        int j = right;
+        while (i < j) {
+            while (i < j && array[i] <= base) {
+                i++;
+            }
+            while (i < j && array[j] >= base) {
+                j--;
+            }
+            swap(array, i, j);
+        }
+        swap(array, i, right);
+        return i;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {9, 5, 2, 7, 3, 6, 8};
+        //insertSort(array);
+        //shellSort(array);
+        //selectSort(array);
+        //heapSort(array);
+        //bubbleSort(array);
+        quickSort(array);
+        System.out.println(Arrays.toString(array));
     }
 }
