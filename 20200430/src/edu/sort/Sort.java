@@ -1,6 +1,7 @@
 package edu.sort;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Sort {
     /**
@@ -164,6 +165,33 @@ public class Sort {
         return i;
     }
 
+
+    /**
+     * 快速排序的非递归实现
+     * 类比于二叉树的先序遍历的非递归实现
+     * @param array
+     */
+    public static void quickSortByLoop(int[] array) {
+        //栈中保存的元素相当于当前要进行partition操作的范围下标
+        Stack<Integer> stack = new Stack <>();
+        stack.push(0);
+        stack.push(array.length - 1);
+        while (!stack.isEmpty()) {
+            int right = stack.pop();
+            int left = stack.pop();
+            if(left >= right) {
+                continue;
+            }
+            int index = partition(array, left, right);
+            //把右子树入栈[index + 1, right]
+            stack.push(index + 1);
+            stack.push(right);
+            //把左子树入栈[left, index - 1]
+            stack.push(left);
+            stack.push(index - 1);
+        }
+    }
+
     public static void main(String[] args) {
         int[] array = {9, 5, 2, 7, 3, 6, 8};
         //insertSort(array);
@@ -171,7 +199,8 @@ public class Sort {
         //selectSort(array);
         //heapSort(array);
         //bubbleSort(array);
-        quickSort(array);
+        //quickSort(array);
+        quickSortByLoop(array);
         System.out.println(Arrays.toString(array));
     }
 }
