@@ -192,6 +192,60 @@ public class Sort {
         }
     }
 
+
+    private static void mergeSort(int[] array) {
+        //[0, length)
+        mergeSortHelper(array, 0, array.length);
+    }
+
+    private static void mergeSortHelper(int[] array, int left, int right) {
+        //[left, right)
+        //if(left >= right){ //这是错误的
+        if(right - left <= 1) {  //当前区间中有0个或者一个元素的时候
+            return;
+        }
+        int mid = (left + right) / 2;
+        mergeSortHelper(array, left, mid);
+        mergeSortHelper(array,mid, right);
+        //经过上面的递归,认为这两个区间已经排好序了,接下来进行合并
+        merge(array, left, mid, right);
+    }
+
+    private static void merge(int[] array, int left, int mid, int right) {
+        //当前有两个有序数组
+        //[left, mid)
+        //[mid, right)
+        int cur1 = left;
+        int cur2 = mid;
+        int[] output = new int[right - left];
+        int outputIndex = 0;//当前output 中被插入了几个元素
+
+        while (cur1 < mid && cur2 < right) {
+            if(array[cur1] <= array[cur2]) {
+                output[outputIndex] = array[cur1];
+                cur1++;
+            } else {
+                output[outputIndex] = array[cur2];
+                cur2++;
+            }
+            outputIndex++;
+        }
+        while (cur1 < mid) {
+            output[outputIndex] = array[cur1];
+            cur1++;
+            outputIndex++;
+        }
+        while (cur2 < right) {
+            output[outputIndex] = array[cur2];
+            cur2++;
+            outputIndex++;
+        }
+        //最后一步吧数据从临时空间拷贝回原来的数组中
+        for (int i = 0; i < right - left ; i++) {
+            array[left + i] = output[i];
+        }
+     }
+
     public static void main(String[] args) {
         int[] array = {9, 5, 2, 7, 3, 6, 8};
         //insertSort(array);
@@ -200,7 +254,8 @@ public class Sort {
         //heapSort(array);
         //bubbleSort(array);
         //quickSort(array);
-        quickSortByLoop(array);
+        //quickSortByLoop(array);
+        mergeSort(array);
         System.out.println(Arrays.toString(array));
     }
 }
