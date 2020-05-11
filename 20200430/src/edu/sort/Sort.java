@@ -246,6 +246,26 @@ public class Sort {
         }
      }
 
+
+     private static void mergeSortByLoop(int[] array) {
+        for (int gap = 1; gap < array.length; gap *= 2) {
+            for (int i = 0; i < array.length; i += 2 * gap) {
+                //每次执行一遍循环体,相当于把两个长度为gap的相邻组进行了合并
+                //[i, i+gap)
+                //[i + gap, i + 2 * gap)
+                int left = i;
+                int mid = i + gap;
+                int right = i + 2 * gap;
+                if(mid > array.length) {
+                    mid = array.length;
+                }
+                if(right > array.length) {
+                    right = array.length;
+                }
+                merge(array, left, mid, right);
+            }
+        }
+     }
     public static void main(String[] args) {
         int[] array = {9, 5, 2, 7, 3, 6, 8};
         //insertSort(array);
@@ -255,7 +275,8 @@ public class Sort {
         //bubbleSort(array);
         //quickSort(array);
         //quickSortByLoop(array);
-        mergeSort(array);
+        //mergeSort(array);
+        mergeSortByLoop(array);
         System.out.println(Arrays.toString(array));
     }
 }
