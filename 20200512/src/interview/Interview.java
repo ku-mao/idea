@@ -74,6 +74,7 @@ public class Interview {
         return new int[]{a, b};
     }
 
+
     public static void main(String[] args) {
         int[] array = {1, 4, 3, 3, 4};
         System.out.println(singleNumber(array));
@@ -82,7 +83,7 @@ public class Interview {
         int[] array2 = {1, 1, 4, 5, 5, 4, 6, 8};
         int[] ret = singleNumber3(array2);
         for (int x : ret) {
-            System.out.print(x + " ");
+            System.out.print(x + "  ");
         }
     }
 }
