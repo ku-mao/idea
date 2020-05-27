@@ -1,8 +1,8 @@
 package interview;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import javafx.scene.effect.SepiaTone;
+
+import java.util.*;
 
 public class Interview2 {
     static class Test {
@@ -64,6 +64,49 @@ public class Interview2 {
             newCur.random = map.get(cur.random);
         }
         return map.get(head);
+    }
+
+    /**
+     *  给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 
+     * S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。
+     * J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写
+     * 因此"a"和"A"是不同类型的石头
+
+     * @param J
+     * @param S
+     * @return
+     */
+    public int numJewelsInStones(String J, String S) {
+        //J 是宝石 S 是石头
+        int count = 0;
+
+        //遍历S,看S中的字符是否在J 中出现,根据出现情况来计数
+        //但是这个方法中String.contains 时间复杂度是O(N) 整体的复杂度是O(N^2)
+//        for (int i = 0; i < S.length(); i++) {
+//            char c = S.charAt(i);
+//            if (J.contains(c + "")) {
+//                count++;
+//            }
+//        }
+
+        //String.contains的时间复杂度是O(N)
+        //TreeSet.contains的时间复杂度是O(logN)
+        //HashSet.contains的时间复杂度是O(1)
+        //改进方法 采用Set.contains
+
+        //把J中的字符放进Set中
+        Set<Character> set = new HashSet <>();
+        for (int i = 0; i < J.length(); i++) {
+            set.add(J.charAt(i));
+        }
+
+        //再遍历S 判断S中的字符是否在Set中存在
+        for (int i = 0; i < S.length(); i++) {
+            if (set.contains(S.charAt(i))) {
+                count++;
+            }
+        }
+        return count;
     }
     public static void main(String[] args) {
         Test t = new Test();
