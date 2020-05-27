@@ -108,6 +108,47 @@ public class Interview2 {
         }
         return count;
     }
+
+
+
+
+    static class MyComparator implements Comparator<String> {
+        private Map<String, Integer> map;
+
+        public MyComparator(Map <String, Integer> map) {
+            this.map = map;
+        }
+
+        @Override
+        public int compare(String o1, String o2) {
+            int count1 = map.get(o1);
+            int count2 = map.get(o2);
+            if (count1 == count2) {
+                return o1.compareTo(o2);
+            }
+
+            return count2 - count1;
+        }
+    }
+    /**
+     * 给一非空的单词列表，返回前 k 个出现次数最多的单词。
+     * 返回的答案应该按单词出现频率由高到低排序。
+     * 如果不同的单词有相同出现频率，按字母顺序排序
+     * @param words
+     * @param k
+     * @return
+     */
+    public List<String> topKFrequent(String[] words, int k) {
+        Map<String, Integer> map = new HashMap <>();
+        for (String s : words) {
+            Integer count = map.getOrDefault(s, 0);
+            map.put(s, count + 1);
+        }
+        //把统计的字符串放在ArrayList里面
+        ArrayList<String> arrayList = new ArrayList (map.keySet());
+        Collections.sort(arrayList, new MyComparator(map));
+        return arrayList.subList(0, k);
+    }
     public static void main(String[] args) {
         Test t = new Test();
         t.data.add(1);
