@@ -1,6 +1,5 @@
 package interview;
 
-import javafx.scene.effect.SepiaTone;
 
 import java.util.*;
 
@@ -112,24 +111,24 @@ public class Interview2 {
 
 
 
-    static class MyComparator implements Comparator<String> {
-        private Map<String, Integer> map;
-
-        public MyComparator(Map <String, Integer> map) {
-            this.map = map;
-        }
-
-        @Override
-        public int compare(String o1, String o2) {
-            int count1 = map.get(o1);
-            int count2 = map.get(o2);
-            if (count1 == count2) {
-                return o1.compareTo(o2);
-            }
-
-            return count2 - count1;
-        }
-    }
+//    static class MyComparator implements Comparator<String> {
+//        private Map<String, Integer> map;
+//
+//        public MyComparator(Map <String, Integer> map) {
+//            this.map = map;
+//        }
+//
+//        @Override
+//        public int compare(String o1, String o2) {
+//            int count1 = map.get(o1);
+//            int count2 = map.get(o2);
+//            if (count1 == count2) {
+//                return o1.compareTo(o2);
+//            }
+//
+//            return count2 - count1;
+//        }
+//    }
     /**
      * 给一非空的单词列表，返回前 k 个出现次数最多的单词。
      * 返回的答案应该按单词出现频率由高到低排序。
@@ -146,7 +145,17 @@ public class Interview2 {
         }
         //把统计的字符串放在ArrayList里面
         ArrayList<String> arrayList = new ArrayList (map.keySet());
-        Collections.sort(arrayList, new MyComparator(map));
+       // Collections.sort(arrayList, new MyComparator(map));
+
+        //采用匿名内部类更为简单
+        Collections.sort(arrayList, (o1, o2) -> {
+            int count1 = map.get(o1);
+            int count2 = map.get(o2);
+            if (count1 == count2) {
+                return o1.compareTo(o2);
+            }
+            return count2 - count1;
+        });
         return arrayList.subList(0, k);
     }
     public static void main(String[] args) {
