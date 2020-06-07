@@ -35,6 +35,15 @@ public class ThreadDemo2 {
         //此时主线程仍然会继续执行,下面的end 就随机被计算了
         //正确的做法是等t1 和 t2 都计算完之后,再计算end的时间戳
 
+        try {
+            //让主线程等待t1和t2 执行完之后再往下执行
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
         long end = System.currentTimeMillis();
         System.out.println("time: " + (end - start) + "ms");
     }
