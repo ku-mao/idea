@@ -24,7 +24,7 @@ public class ThreadDemo1 {
         //执行这个start方法,才真的创建出了一个线程
         //此时内核中才随之出现了一个PCB,这个PCB就会对应让cpu来执行该线程的代码(也就是上面的run方法)
         t.start();
-        while (true) {
+        while (true){
 
         }
     }
