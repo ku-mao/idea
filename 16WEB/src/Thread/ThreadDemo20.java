@@ -22,7 +22,7 @@ public class ThreadDemo20 {
         //阻塞版本的入队列,为了和之前的版本区别,用了不同非名字
         public void put(int value) throws InterruptedException {
             synchronized (this) {
-                if (size == array.length) {
+                while (size == array.length) {
                     wait();
                 }
                 array[tail] = value;
@@ -40,7 +40,7 @@ public class ThreadDemo20 {
         public int take() throws InterruptedException {
             int ret = -1;
             synchronized (this) {
-                if (size == 0) {
+                while (size == 0) {
                     wait();
                 }
                 ret = array[head];
