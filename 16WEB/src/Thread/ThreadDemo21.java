@@ -29,7 +29,7 @@ public class ThreadDemo21 {
     }
 
     static class Worker extends Thread {
-        Object mailBox = new Object();
+        private Object mailBox = null;
         private PriorityBlockingQueue<Task>  queue = null;
         public Worker(PriorityBlockingQueue<Task> queue, Object mailBox) {
             this.queue = queue;
