@@ -9,8 +9,8 @@ import java.io.IOException;
  */
 public class IODemo4 {
     public static void main(String[] args)  {
-        //noBuffer();
-        hasBuffer();
+        //noBuffer();  //5.5秒
+        hasBuffer();   //6毫秒
     }
 
     private static void noBuffer()  {
