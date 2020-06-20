@@ -63,9 +63,20 @@ public class IODemo2 {
                 e.printStackTrace();
             }
         }
+    }
 
-
-
-
+    private static void copyFile3() {
+        //当这样写的时候就不用显示调用close
+        //try 语句会在代码执行完毕后,自动调用close 方法 (前提是这个类必须实现Closable 接口)
+        try (FileInputStream fileInputStream = new FileInputStream("d:/test/sky.jpg");
+             FileOutputStream fileOutputStream = new FileOutputStream("d:/test/s.jpg")){
+            byte[] buffer = new byte[1024];
+            int len = -1;
+            while((len = fileInputStream.read(buffer)) != - 1) {
+                fileOutputStream.write(buffer, 0, len);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
