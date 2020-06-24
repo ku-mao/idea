@@ -30,7 +30,6 @@ public class IODemo6 {
     private static Student deserializeStudent() throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("d:/student.txt"));
         Student s = (Student) objectInputStream.readObject();
-        objectInputStream.close();
         return s;
     }
 }
