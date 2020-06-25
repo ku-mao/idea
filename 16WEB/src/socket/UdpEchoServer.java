@@ -40,7 +40,7 @@ public class UdpEchoServer {
             //response.getBytes().length 得到的是字节数, 这里不能写成response.length()得到的是字符数
             //requestPacket.getSocketAddress() 需要知道这个响应发给谁, 这里得到的是客户端的目的IP和端口
 
-            socket.send(requestPacket);
+            socket.send(responsePacket);
 
             //打印一条请求信息
             System.out.printf("[%s:%d] req: %s; resp: %s\n", requestPacket.getAddress().toString(),
