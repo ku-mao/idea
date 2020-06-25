@@ -26,7 +26,7 @@ public class UdpEchoServer {
             DatagramPacket requestPacket = new DatagramPacket(new byte[4096], 4096);//给数据报对象创建一个缓冲区对象
             socket.receive(requestPacket);//大概率的情况是,调用receive的时候,客户端还没谱呢,还没发任何数据.
             //此时receive操作就会阻塞-直阻塞到,真的有数据过来了为止(此处的阻塞时间完全不可预期)
-            //此处是要把请求数据转成一个 String (本来请求是一个byte[)
+            //此处是要把请求数据转成一个 String (本来请求是一个byte[])
             String request = new String(requestPacket.getData(), 0,
                     requestPacket.getLength()).trim();//用户实际发送的数据可能远远小于4096.
             // 而此处getLength得到的长度就是4096,通过trim就可以干掉不必要的空白字符.
@@ -49,7 +49,7 @@ public class UdpEchoServer {
 
     }
 
-    private String process(String request) {
+    public String process(String request) {
         //由于此处是一个 echo server 回显服务器, 请求内容是什么,就回应什么
         return request;
     }
