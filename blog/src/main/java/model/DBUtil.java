@@ -12,16 +12,16 @@ import java.sql.SQLException;
 //1)建立连接
 //2)断开连接
 // JDBC 中使用DataSource 来管理连接.
-// DBUtil 相当于是对DataSource 再稍微包装一 层.
-// DataSource 每个应用程序只应该有一个实例~~ (单例)
-//DBUtil本质上就是实现了一个单例模式，管理了唯-的一个DataSource实例
+// DBUtil 相当于是对DataSource 再稍微包装一层.
+// DataSource 每个应用程序只应该有一个实例(单例)
+//DBUtil本质上就是实现了一个单例模式，管理了唯一的一个DataSource实例
 //单例模式的实现，有两种风格:
 // 1.饿汉模式
 // 2.懒汉模式，
 // 此处咱们使用懒汉模式即可，
 public class DBUtil {
     private static DataSource dataSource = null;
-    private static final String URL = "jdbc:mysql://127.0.0.0.1:3306/blog?characterEncoding=uft-8&useSSL=true";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/blog?characterEncoding=utf-8&useSSL=true";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
@@ -64,14 +64,6 @@ public class DBUtil {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
-
-
 }
 
 
