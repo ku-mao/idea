@@ -1,5 +1,6 @@
 package model.Dao;
 
+import model.Article;
 import model.DBUtil;
 import model.User;
 
@@ -75,6 +76,35 @@ public class UserDao {
 //        userDao.add(user);
         //测试selectByName() 方法
         System.out.println(userDao.selectByName("drr"));
+    }
+
+    public User selectById(int userId) {
+        //1.连接数据库
+        Connection connection = DBUtil.getConnection();
+        //2.拼装SQL
+        String sql = "select * from user where userId = ?";
+        //3.执行SQL
+        PreparedStatement statement =null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, userId);
+            //4.遍历结果集
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                User user = new User();
+                user.setUserId(resultSet.getInt("userId"));
+                user.setName(resultSet.getString("name"));
+                user.setPassword(resultSet.getString("password"));
+                return user;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            //5.关闭连接
+            DBUtil.close(connection, statement, resultSet);
+        }
+        return null;
     }
 }
 
