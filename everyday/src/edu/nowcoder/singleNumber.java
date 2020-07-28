@@ -13,6 +13,11 @@ public class singleNumber {
         System.out.println(find2(b));
     }
 
+    /**
+     * 数组中的元素, 只有一个出现一次, 其他都出现2次 找到出现一次的元素
+     * @param a
+     * @return
+     */
     private static int find1(int[] a) {
         int result = 0;
         for (int i = 0; i < a.length ; i++) {
@@ -21,6 +26,11 @@ public class singleNumber {
         return result;
     }
 
+    /**
+     * 只有一个元素出现一次, 其他元素都出现3次, 找到那个元素
+     * @param b
+     * @return
+     */
     private static int find2(int[] b) {
         Set<Integer> set = new HashSet<>();
         int sum = 0;
