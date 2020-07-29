@@ -62,7 +62,8 @@ public class ArticleServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html; charset=utf-8");
+        req.setCharacterEncoding("utf-8");
         //1.从请求中读取浏览器提交的数据(title, content),并进行校验
         String title = req.getParameter("title");
         String content = req.getParameter("content");
@@ -76,10 +77,16 @@ public class ArticleServlet extends HttpServlet {
         //取到当前用户的id
         HttpSession httpSession = req.getSession(true);
         User user = (User) httpSession.getAttribute("user");
+        ArticleDao articleDao = new ArticleDao();
         Article article = new Article();
         article.setTitle(title);
         article.setContent(content);
         article.setUserId(user.getUserId());
+        articleDao.add(article);
+
         //3. 返回一个插入成功的页面
+        String html = HtmlGenerator.getMessage("发布成功!",
+                "article");
+        resp.getWriter().write(html);
     }
 }

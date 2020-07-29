@@ -34,10 +34,10 @@ public class HtmlGenerator {
         stringBuilder.append("<meta charset=\"utf-8\">");
         stringBuilder.append("<title>提示页面</title>");
         stringBuilder.append("<style>");
-        stringBuilder.append("a {" +
+        stringBuilder.append(".article {" +
                             "color: black;" +
                             "text-decoration: none;" +
-                            "display: inline-block;" +
+                           // "display: inline-block;" +
                             "width: 200px;" +
                             "height: 50px" +
                             "}");//修改链接的颜色
@@ -46,7 +46,7 @@ public class HtmlGenerator {
                             "background-color: red;" +
                             "}");//鼠标放在上面的颜色
         stringBuilder.append("body {"+
-                            "background-image: url(\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595782374515&di=28b3af7b49d5bc3e309ab17b1e5dfa70&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F3%2Fd9%2Fca54aac8f2.jpg\");" +
+                            "background-image: url(\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596011849351&di=2ea11d92170cc3b0bd679645239d8c94&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fb%2F58705f2c2ad41.jpg\");" +
                             "background-repeat: none;" +
                             "background-position: 0 center;" +
                             "}");//加背景图片
@@ -58,8 +58,9 @@ public class HtmlGenerator {
         stringBuilder.append("<hr>");
         //把文章的每个标题都显示出来, 还会有一个链接, 跳转文章详情页
         for (Article article : articles) {
-            stringBuilder.append(String.format("<div style=\"width: 200px; height: 50px; line-height: 50px\"> <a href=\"article?articleId=%d\"> %s</a></div>",
-                    article.getArticleId(), article.getTitle()));
+            stringBuilder.append(String.format("<div style=\"width: 200px; height: 50px; line-height: 50px\"> <a class = article href=\"article?articleId=%d\"> %s</a> " +
+                            "<a href=\"deleteArticle?articleId=%d\">删除</a></div>",
+                    article.getArticleId(), article.getTitle(), article.getArticleId()));
         }
         stringBuilder.append("<hr>");
         stringBuilder.append(String.format("<div>共有博客 %d 篇</div>", articles.size()));
@@ -70,7 +71,7 @@ public class HtmlGenerator {
         stringBuilder.append("<form action=\"article\" method=\"post\">");
         stringBuilder.append("<input type=\"text\" style=\"width: 500px; margin-bottom: 5px\" name=\"title\" placeholder=\"请输入标题\">");
         stringBuilder.append("</br>");
-        stringBuilder.append("<textarea name=\"text\" style=\"width: 500px; height: 300px;\"></textarea>");
+        stringBuilder.append("<textarea name=\"content\" style=\"width: 500px; height: 300px;\"></textarea>");
         stringBuilder.append("</br>");
         stringBuilder.append("<input type=\"submit\" value=\"发布博客\">");
         stringBuilder.append("</form>");
@@ -99,7 +100,7 @@ public class HtmlGenerator {
                 "background-color: red;" +
                 "}");//鼠标放在上面的颜色
         stringBuilder.append("body {"+
-                "background-image: url(\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595782374515&di=28b3af7b49d5bc3e309ab17b1e5dfa70&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F3%2Fd9%2Fca54aac8f2.jpg\");" +
+                "background-image: url(\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596011849351&di=2ea11d92170cc3b0bd679645239d8c94&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fb%2F58705f2c2ad41.jpg\");" +
                 "background-repeat: none;" +
                 "background-position: 0 center;" +
                 "}");//加背景图片
@@ -112,7 +113,7 @@ public class HtmlGenerator {
 
         stringBuilder.append("<h1> 文章标题: " + article.getTitle() + "</h1>");
         stringBuilder.append(String.format("<h4> 作者姓名: %s </h4>", author.getName()));
-        stringBuilder.append(String.format("<div> 正文: %s </div>" ,article.getContent()));
+        stringBuilder.append(String.format("<div> 正文: %s </div>" ,article.getContent().replace("\n", "</br>")));
         stringBuilder.append("</body>");
         stringBuilder.append("</html>");
         return stringBuilder.toString();
