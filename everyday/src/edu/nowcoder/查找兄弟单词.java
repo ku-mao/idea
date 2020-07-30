@@ -6,10 +6,10 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class 查找兄弟单词 {
-    private static ArrayList<String> broList = new ArrayList<>();
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (scan.hasNext()) {
+            ArrayList<String> broList = new ArrayList<>();
             String[] dict = scan.nextLine().split(" ");
             int n = Integer.parseInt(dict[0]);
             String target = dict[n + 1];
