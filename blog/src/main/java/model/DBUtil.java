@@ -21,9 +21,9 @@ import java.sql.SQLException;
 // 此处咱们使用懒汉模式即可，
 public class DBUtil {
     private static DataSource dataSource = null;
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/blog?characterEncoding=utf-8&useSSL=true";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/blog2?characterEncoding=utf-8&useSSL=true";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "";
 
     public static DataSource getDataSource() {
         if (dataSource == null) {

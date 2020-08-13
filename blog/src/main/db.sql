@@ -1,7 +1,7 @@
-drop database if exists blog;
-create database blog;
+drop database if exists blog2;
+create database blog2;
 
-use blog;
+use blog2;
 
 create table user (
     userId int primary key auto_increment,
