@@ -1,14 +1,14 @@
 package model;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
     private int orderId;
     private int userId;
     private Timestamp time;
     private int isDone;
-    private ArrayList<Dish> dishes;
+    private List<Dish> dishes;
 
     public int getOrderId() {
         return orderId;
@@ -42,11 +42,11 @@ public class Order {
         this.isDone = isDone;
     }
 
-    public ArrayList <Dish> getDishes() {
+    public List <Dish> getDishes() {
         return dishes;
     }
 
-    public void setDishes(ArrayList <Dish> dishes) {
+    public void setDishes(List <Dish> dishes) {
         this.dishes = dishes;
     }
 }

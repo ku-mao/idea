@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 1.新增菜品
@@ -99,7 +100,7 @@ public class DishDao {
     }
 
     //4.按照dishId查找菜品
-    public Dish selectById(int dishId) {
+    public Dish selectById(int dishId) throws OrderSystemException {
         //1.建立连接
         Connection connection = DBUtil.getConnection();
         //2.拼装SQL
@@ -122,6 +123,7 @@ public class DishDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            throw new OrderSystemException("按照dishId查找菜品失败!");
         } finally {
             //5.释放连接
             DBUtil.close(connection, statement, resultSet);
@@ -130,16 +132,16 @@ public class DishDao {
     }
 
     //5.修改菜品
-    public void update(Dish dish, int newPrice) throws OrderSystemException {
+    public void update(int dishId, int newPrice) throws OrderSystemException {
         //1.建立连接
         Connection connection = DBUtil.getConnection();
         //2.拼装SQL
         PreparedStatement statement = null;
-        String sql = "update menu where dishId = ? set price = ?";
+        String sql = "update menu set price = ? where dishId = ? ";
         try {
             statement = connection.prepareStatement(sql);
-            statement.setInt(1, dish.getDishId());
-            statement.setInt(2, newPrice);
+            statement.setInt(1, newPrice);
+            statement.setInt(2, dishId);
             //3.执行SQL
             int ret = statement.executeUpdate();
             if (ret != 1) {
@@ -151,5 +153,32 @@ public class DishDao {
         } finally {
             DBUtil.close(connection, statement, null);
         }
+    }
+
+    public static void main(String[] args) throws OrderSystemException {
+        DishDao dishDao = new DishDao();
+        //1.新增菜品
+//        Dish dish = new Dish();
+//        dish.setDishName("红烧茄子");
+//        dish.setPrice(1800);
+//        dishDao.add(dish);
+//        dish.setDishName("红烧鱼");
+//        dish.setPrice(3500);
+//        dishDao.add(dish);
+//        dish.setDishName("红烧肉");
+//        dish.setPrice(2500);
+//        dishDao.add(dish);
+        //2.查看菜单
+//        System.out.println("查看菜单");
+//        List<Dish> dishes = dishDao.selectAll();
+//        System.out.println(dishes);
+        //3.按照id查看菜品
+//        Dish dish = dishDao.selectById(1);
+//        System.out.println("按照Id查找菜品");
+//        System.out.println(dish);
+        //4.按照id删除菜品
+        //dishDao.delete(3);
+        //5.修改菜的价格
+        dishDao.update(2, 4000);
     }
 }

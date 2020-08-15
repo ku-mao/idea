@@ -6,6 +6,16 @@ public class User {
     private String password;
     private int isAdmin;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", isAdmin=" + isAdmin +
+                '}';
+    }
+
     public int getUserId() {
         return userId;
     }

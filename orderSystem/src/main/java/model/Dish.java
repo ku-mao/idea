@@ -5,6 +5,15 @@ public class Dish {
     private String dishName;
     private int price;
 
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "dishId=" + dishId +
+                ", dishName='" + dishName + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
     public int getDishId() {
         return dishId;
     }

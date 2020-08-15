@@ -1,6 +1,5 @@
 package model;
 
-import sun.security.pkcs11.Secmod;
 import util.OrderSystemException;
 
 import java.sql.Connection;
@@ -100,5 +99,25 @@ public class UserDao {
             DBUtil.close(connection, statement, resultSet);
         }
         return null;
+    }
+
+    public static void main(String[] args) throws OrderSystemException {
+        //1.测试新增用户
+//        User user = new User();
+//        user.setName("drr");
+//        user.setPassword("123");
+//        user.setIsAdmin(0);
+//        UserDao userDao = new UserDao();
+//        userDao.add(user);
+
+        //2.测试按照名字查找
+//        UserDao userDao = new UserDao();
+//        System.out.println("按照名字查找");
+//        User user = userDao.selectByName("drr");
+//        System.out.println(user);
+//        //3.测试按照id查找
+//        System.out.println("按照id查找");
+//        User user1 = userDao.selectById(1);
+//        System.out.println(user1);
     }
 }
