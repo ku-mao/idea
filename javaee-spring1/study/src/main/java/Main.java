@@ -1,3 +1,7 @@
+import edu.School;
+import edu.Student;
+import edu.Student1;
+import edu.Student2;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,5 +22,16 @@ public class Main {
         String str2 = (String)context.getBean(String.class);
         System.out.println(str2);
 
+        Student student = (Student) context.getBean("student");
+        System.out.println(student);
+
+        Student1 student1 = (Student1)context.getBean("student1");
+        System.out.println(student1);
+
+        Student2 student2 = (Student2) context.getBean("s1");
+        System.out.println(student2);
+
+        School students = (School) context.getBean("school");
+        System.out.println(students);
     }
 }

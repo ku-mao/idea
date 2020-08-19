@@ -8,7 +8,53 @@
           id 相当于bean的名称, Spring 可以通过 id 找到 bean 对象-->
 
     <!-- 通过无参的构造方法, 创建一个对象, 如果该类型没有无参的构造方法, 会报错-->
-    <bean id = "happy" class="java.lang.String"></bean>
+    <bean id = "happy" class="java.lang.String">
+        <constructor-arg value="I am happy" />
+    </bean>
     <!--<bean class="java.lang.String"></bean>-->
 
+
+    <bean id = "student" class="edu.Student">
+        <property name="name" value="drr"/>
+        <property name="age" value="20"/>
+    </bean>
+    <bean id = "student_1" class="edu.Student">
+        <property name="name" value="hm"/>
+        <property name="age" value="21"/>
+    </bean>
+    <bean id = "student_2" class="edu.Student">
+        <property name="name" value="lq"/>
+        <property name="age" value="22"/>
+    </bean>
+    <bean id="school" class="edu.School">
+        <property name="students">
+            <list>
+                <ref bean="student"/>
+                <ref bean="student_1"/>
+                <ref bean="student_2"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="student1" class="edu.Student1">
+        <constructor-arg name="n" value="小学生"/>
+        <constructor-arg name="a" value="18"/>
+    </bean>
+
+
+    <bean id="s1" class="edu.Student2">
+        <property name="name" value="张三"/>
+        <property name="age" value="6"/>
+        <property name="next" ref="s2"/>
+    </bean>
+    <bean id="s2" class="edu.Student2">
+        <property name="name" value="李四"/>
+        <property name="age" value="18"/>
+        <property name="next" ref="s3"/>
+    </bean>
+    <bean id="s3" class="edu.Student2">
+        <property name="name" value="王五"/>
+        <property name="age" value="20"/>
+    </bean>
 </beans>
