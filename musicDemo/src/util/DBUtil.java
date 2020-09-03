@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBUtils {
+public class DBUtil {
     private static DataSource dataSource = null;
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/musicDemo?characterEncoding=utf-8&useSSL=true";
     private static final String USERNAME = "root";
@@ -16,7 +16,7 @@ public class DBUtils {
 
     public static DataSource getDataSource() {
         if (dataSource == null) {
-            synchronized (DBUtils.class) {
+            synchronized (DBUtil.class) {
                 if (dataSource == null) {
                     dataSource = new MysqlDataSource();
                     ((MysqlDataSource) dataSource).setURL(URL);

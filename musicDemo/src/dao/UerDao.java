@@ -1,7 +1,7 @@
 package dao;
 
 import entity.User;
-import util.DBUtils;
+import util.DBUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ public class UerDao {
      */
     public static void addUser(User user) {
         //建立连接
-        Connection connection = DBUtils.getConnection();
+        Connection connection = DBUtil.getConnection();
         //构造SQL
         String sql = "insert into user values (null, ?, ?)";
         PreparedStatement statement = null;
@@ -33,15 +33,48 @@ public class UerDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            DBUtils.close(connection, statement, resultSet);
+            DBUtil.close(connection, statement, resultSet);
         }
     }
 
-    public static void main(String[] args) {
+    public static User login(String userName) {
+        //1.建立连接
+        Connection connection = DBUtil.getConnection();
+        //2.拼装SQL
+        String sql = "select * from user where username = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
         User user = new User();
-        user.setUsername("hm");
-        user.setPassword("123");
-        addUser(user);
+        try {
+             statement = connection.prepareStatement(sql);
+             statement.setString(1, userName);
+             //3.执行SQL
+            resultSet = statement.executeQuery();
+            //4.遍历结果集
+            if (resultSet.next()) {
+                user.setId(resultSet.getInt("id"));
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            //释放连接
+            DBUtil.close(connection, statement, resultSet);
+        }
+        return user;
+    }
+
+    public static void main(String[] args) {
+        //测试注册
+//        User user = new User();
+//        user.setUsername("hm");
+//        user.setPassword("123");
+//        addUser(user);
+        //测试登录
+        User user = login("drr");
+        System.out.println(user);
+
     }
 
 }
