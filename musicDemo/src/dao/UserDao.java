@@ -8,11 +8,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UerDao {
+public class UserDao {
     /**
      * 注册
      */
-    public static void addUser(User user) {
+    public  void addUser(User user) {
         //建立连接
         Connection connection = DBUtil.getConnection();
         //构造SQL
@@ -37,7 +37,7 @@ public class UerDao {
         }
     }
 
-    public static User login(String userName) {
+    public  User login(String userName) {
         //1.建立连接
         Connection connection = DBUtil.getConnection();
         //2.拼装SQL
@@ -66,14 +66,15 @@ public class UerDao {
     }
 
     public static void main(String[] args) {
+       // UserDao userDao = new UserDao();
         //测试注册
 //        User user = new User();
 //        user.setUsername("hm");
 //        user.setPassword("123");
-//        addUser(user);
+//        userDao.addUser(user);
         //测试登录
-        User user = login("drr");
-        System.out.println(user);
+//        User user = userDao.login("drr");
+//        System.out.println(user);
 
     }
 
