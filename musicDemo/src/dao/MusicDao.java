@@ -366,7 +366,8 @@ public class MusicDao {
 //        musicDao.deleteById(1);
 //        musicDao.addLoveMusic(1, 2);
 //         System.out.println(musicDao.deleteLoveMusic(2));
-     System.out.println(musicDao.findAllLoveMusic(1));
+    // System.out.println(musicDao.findAllLoveMusic(1));
         //System.out.println(musicDao.findIfLoveMusic("不", 1));
+        //System.out.println(musicDao.ifMusic("夏"));
     }
 }
