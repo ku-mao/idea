@@ -16,6 +16,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+
+/**
+ * 上传到服务器
+ */
 @WebServlet("/upload")
 public class UploadServlet extends HttpServlet {
     public  final String PATH = "E:\\idea\\musicDemo\\web\\music\\";
@@ -50,7 +54,7 @@ public class UploadServlet extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            System.out.println("目录上传成功");
+            System.out.println("上传服务器成功");
             //上传到数据库中
             resp.sendRedirect("uploadsucess.html");
         }

@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+/**
+ * 上传到数据库
+ */
 @WebServlet("/uploadsucess")
 public class UploadInsertServlet extends HttpServlet {
     @Override

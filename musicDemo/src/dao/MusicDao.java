@@ -47,7 +47,7 @@ public class MusicDao {
     /**
      * 按照id找音乐
      */
-    public  Music selectById(int id) {
+    public  Music findMusicById(int id) {
         Music music = new Music();
         Connection connection = DBUtil.getConnection();
         String sql = "select * from music where id = ?";
@@ -153,13 +153,14 @@ public class MusicDao {
                         return 1;
                     }
                 }
+                return 1;
             }
-            System.out.println("删除失败!");
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             DBUtil.close(connection, statement, null);
         }
+        System.out.println("删除失败!");
         return 0;
     }
 
@@ -202,22 +203,6 @@ public class MusicDao {
         }
         return ret;
     }
-
-    /**
-     * 批量删除音乐
-     */
-//    public void deleteSelMusic(int[] ids) {
-//        Connection connection = DBUtil.getConnection();
-//        String sql = "delete from music where id = ?";
-//        PreparedStatement statement = null;
-//        try {
-//            statement = connection.prepareStatement(sql);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            DBUtil.close(connection, statement, null);
-//        }
-//    }
 
 
     /**
