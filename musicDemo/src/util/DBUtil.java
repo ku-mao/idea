@@ -12,7 +12,7 @@ public class DBUtil {
     private static DataSource dataSource = null;
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/musicDemo?characterEncoding=utf-8&useSSL=true";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "";
 
     public static DataSource getDataSource() {
         if (dataSource == null) {

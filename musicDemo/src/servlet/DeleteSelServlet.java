@@ -30,7 +30,7 @@ public class DeleteSelServlet extends HttpServlet {
 
             int ret = musicDao.deleteById(id);//删除数据库
             if (ret == 1) {
-                File file = new File( "E:\\idea\\musicDemo\\web\\" + music.getUrl() + ".mp3");
+                File file = new File( "/root/java16/apache-tomcat-8.5.57/webapps/musicPlayer/" + music.getUrl() + ".mp3");
                 if (file.delete()) {
                    sum += ret;
                 } else {

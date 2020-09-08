@@ -22,7 +22,7 @@ import java.util.List;
  */
 @WebServlet("/upload")
 public class UploadServlet extends HttpServlet {
-    public  final String PATH = "E:\\idea\\musicDemo\\web\\music\\";
+    public  final String PATH = "/root/java16/apache-tomcat-8.5.57/webapps/musicPlayer/music";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");

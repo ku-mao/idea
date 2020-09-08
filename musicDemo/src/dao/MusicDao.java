@@ -231,7 +231,7 @@ public class MusicDao {
     /**
      * 添加到喜欢列表
      */
-    public void addLoveMusic(int userId, int musicId) {
+    public boolean addLoveMusic(int userId, int musicId) {
         Connection connection = DBUtil.getConnection();
         PreparedStatement statement = null;
         String sql = "insert into lovemusic values (null, ?, ?)";
@@ -242,7 +242,7 @@ public class MusicDao {
             int ret = statement.executeUpdate();
             if (ret == 1) {
                 System.out.println("添加到喜欢列表成功!");
-                return;
+                return true;
             }
             System.out.println("添加到喜欢列表失败!");
         } catch (SQLException e) {
@@ -250,6 +250,7 @@ public class MusicDao {
         }finally {
             DBUtil.close(connection, statement, null);
         }
+        return false;
     }
 
     /**
@@ -257,7 +258,7 @@ public class MusicDao {
      * 删除当前用户喜欢的这首音乐，
      * 因为同一首音乐可能多个用户喜欢
      */
-    private void deleteLoveMusic(int userId, int musicId) {
+    public int deleteLoveMusic(int userId, int musicId) {
         Connection connection = DBUtil.getConnection();
         String sql = " delete from lovemusic where userId = ? and musicId = ?";
         PreparedStatement statement = null;
@@ -268,7 +269,7 @@ public class MusicDao {
             int ret = statement.executeUpdate();
             if (ret == 1) {
                 System.out.println("删除喜欢的音乐成功!");
-                return;
+                return 1;
             }
             System.out.println("删除喜欢的音乐成功!");
         } catch (SQLException e) {
@@ -276,6 +277,7 @@ public class MusicDao {
         }finally {
             DBUtil.close(connection, statement, null);
         }
+        return 0;
     }
 
     /**

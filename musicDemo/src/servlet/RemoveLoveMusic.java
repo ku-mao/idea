@@ -2,46 +2,32 @@ package servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.MusicDao;
-import entity.Music;
+import entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet("/deleteServlet")
-public class DeleteServlet extends HttpServlet {
+@WebServlet("/removeLoveServlet")
+public class RemoveLoveMusic extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("application/json; charset=utf-8");
-        Map<String, Object> returnMap = new HashMap <>();
         String idStr = req.getParameter("id");
-        int id = Integer.parseInt(idStr);
+        int loveMusicId = Integer.parseInt(idStr);
+        User user = (User) req.getSession(false).getAttribute("user");
 
+        Map<String, Object> returnMap = new HashMap<>();
         MusicDao musicDao = new MusicDao();
-        Music music = musicDao.findMusicById(id);
-        if (music == null) {
-            return;
-        }
-        int ret = musicDao.deleteById(id);
+        int ret = musicDao.deleteLoveMusic(user.getId(), loveMusicId);
         if (ret == 1) {
-            //数据库删除成功
-            //删除服务器上的文件
-            File file = new File( "/root/java16/apache-tomcat-8.5.57/webapps/musicPlayer/" + music.getUrl() + ".mp3");
-
-            if (file.delete()) {
-                returnMap.put("msg", true);
-                System.out.println("服务器删除成功");
-            } else {
-                returnMap.put("msg", false);
-                System.out.println("服务器删除失败");
-            }
+            returnMap.put("msg", true);
         } else {
             returnMap.put("msg", false);
         }
