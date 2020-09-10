@@ -65,7 +65,7 @@ public class UserDao {
         return user;
     }
 
-    public User findByName(String username) {
+    public boolean findByName(String username) {
         //1.建立连接
         Connection connection = DBUtil.getConnection();
         //2.拼装SQL
@@ -79,18 +79,14 @@ public class UserDao {
             resultSet = statement.executeQuery();
             //4.遍历结果集
             if (resultSet.next()) {
-                User user = new User();
-                user.setId(resultSet.getInt("userId"));
-                user.setUsername(resultSet.getString("username"));
-                user.setPassword(resultSet.getString("password"));
-                return user;
+                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             DBUtil.close(connection, statement, resultSet);
         }
-        return null;
+        return false;
     }
 
     public static void main(String[] args) {

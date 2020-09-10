@@ -15,6 +15,13 @@
     <!-- 3. 导入bootstrap的js文件 -->
     <!--<script src="js/bootstrap.min.js"></script>-->
     <script type="text/javascript"></script>
+    <style>
+        #body{
+            background-image: url("images/2.jpg");
+            /*background-size:100% 100%;
+            background-attachment: fixed;*/
+        }
+    </style>
     <script>
         //注册请求
         $(function () {
@@ -30,11 +37,11 @@
                         console.log(data);
                         if(data.msg===true){
                             alert("注册成功")
-                            window.location.href="login.html";
+                            window.location.href="/musicPlayer/login.html";
                         }else{
                             /*window.location.reload();*/
-                            alert("账号已存在!")
-                            window.location.href="login.html";
+                            alert("用户名重复或者用户名为空!")
+                            window.location.href="/musicPlayer/login.html";
                             $("#message").text("用户名错误，请重试!");
                             $("#user").val("");
                             $("#password").val("");

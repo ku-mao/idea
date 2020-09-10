@@ -23,19 +23,18 @@ public class RegisterServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         Map<String, Object> returnMap = new HashMap<>();
-        if(null == username || "".equals(username)) {
+        if (null == username || "".equals(username) || null == password || "".equals(password)) {
             returnMap.put("msg", false);
-        } else {
-            User user = new User();
-            user.setUsername(username);
-            user.setPassword(password);
-            User loginUser = userDao.findByName(username);
-            if (loginUser != null) {
+        } else if (userDao.findByName(username)){
                 returnMap.put("msg", false);
             }else {
+                User user = new User();
+                user.setUsername(username);
+                user.setPassword(password);
+                userDao.addUser(user);
                 returnMap.put("msg", true);
             }
-        }
+
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(resp.getWriter(), returnMap);
     }
