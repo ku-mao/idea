@@ -31,8 +31,12 @@ public class 之字形打印二叉树 {
                 list.add(curr.val);
                 TreeNode first = (dir == 1) ? curr.left : curr.right;
                 TreeNode second = (dir == 1) ? curr.right : curr.left;
-                if(first != null) q.offer(first);
-                if(second != null) q.offer(second);
+                if(first != null) {
+                    q.offer(first);
+                }
+                if(second != null){
+                    q.offer(second);
+                }
             } //本层遍历完毕，入结果集
             result.add(new ArrayList(list)); //一定要注意浅拷贝问题
             list.clear();
