@@ -1,10 +1,10 @@
-package edu.homework;
+package edu.practice;
 
 import java.util.Random;
 import java.util.Scanner;
 
 
-public class Practice {
+public class work {
     /**
      * 编写代码模拟三次密码输入的场景。
      * 最多能输入三次密码，密码正确，提示“登录成功”,
