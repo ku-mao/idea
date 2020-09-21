@@ -89,6 +89,36 @@ public class Sort {
         }
     }
 
+    /**
+     * 快速排序
+     */
+    private void quickSort(int[] arr) {
+        int i = 0;
+        int j = arr.length - 1;
+        quickSortHelper(arr, i, j);
+    }
+    private void quickSortHelper(int[] arr, int i, int j) {
+        if (i >= j) {
+            return;
+        }
+        int low = i;
+        int high = j;
+        int position = arr[i];
+        while (low < high) {
+            while (low < high && arr[high] > position) {
+                high--;
+            }
+            arr[low] = arr[high];
+            while (low < high && arr[low] < position) {
+                low++;
+            }
+            arr[high] = arr[low];
+        }
+        arr[low] = position;
+        quickSortHelper(arr, i, low - 1);
+        quickSortHelper(arr, low + 1, j);
+    }
+
 
     public static void main(String[] args) {
         System.out.println("请输入要排序数组的长度: ");
@@ -104,7 +134,8 @@ public class Sort {
         Sort sort = new Sort();
         //sort.bubbleSort(array);
         //sort.insertSort(array);
-        sort.heapsort(array);
+        //sort.heapsort(array);
+        sort.quickSort(array);
         for (int num : array) {
             System.out.print(num + " ");
         }
