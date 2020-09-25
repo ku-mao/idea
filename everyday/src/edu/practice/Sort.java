@@ -119,6 +119,24 @@ public class Sort {
         quickSortHelper(arr, low + 1, j);
     }
 
+    /**
+     * 选择排序
+     */
+    public void selSort(int[] arr) {
+        for(int j = 0 ; j < arr.length - 1 ; j++) {
+            int min = j;//查找过程中最小元素的索引
+            for (int i = arr.length - 1; i > j; i--) {
+                if (arr[i] < arr[min]) {
+                    min = i;
+                }
+            }
+            int temp = arr[j];
+            arr[j] = arr[min];
+            arr[min] = temp;
+        }
+    }
+
+
 
     public static void main(String[] args) {
         System.out.println("请输入要排序数组的长度: ");
@@ -135,7 +153,8 @@ public class Sort {
         //sort.bubbleSort(array);
         //sort.insertSort(array);
         //sort.heapsort(array);
-        sort.quickSort(array);
+        //sort.quickSort(array);
+        sort.selSort(array);
         for (int num : array) {
             System.out.print(num + " ");
         }
