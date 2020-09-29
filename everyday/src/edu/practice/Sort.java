@@ -136,6 +136,27 @@ public class Sort {
         }
     }
 
+    /**
+     * 希尔排序
+     */
+    public  void shellSort(int[] a) {
+        // 计算出最大的h值
+        int h = 1;
+        while (h <= a.length / 3) {
+            h = h * 3 + 1;
+        }
+        for (; h >= 1; h /= 3) {
+            for (int i = 0; i < a.length - h; i += h) {
+                for (int j = i + h; j > 0; j -= h) {
+                    if (a[j] < a[j - h]) {
+                        int temp = a[j];
+                        a[j] = a[j - h];
+                        a[j - h] = temp;
+                    }
+                }
+            }
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -154,7 +175,8 @@ public class Sort {
         //sort.insertSort(array);
         //sort.heapsort(array);
         //sort.quickSort(array);
-        sort.selSort(array);
+        //sort.selSort(array);
+        sort.shellSort(array);
         for (int num : array) {
             System.out.print(num + " ");
         }
