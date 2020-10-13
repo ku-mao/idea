@@ -1,5 +1,7 @@
 package edu.practice;
-
+//这个类是基于CAS机制封装的原子类
+//原子的整数, 对于整数的操作是原子的
+//不借助锁, 来保证线程安全
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestDemo1 {
