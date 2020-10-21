@@ -42,7 +42,7 @@ public class 二叉树求最短路径 {
     }
     public static int getLength(int[][] tree, int start, int end) {
         TreeNode root = build(tree);
-
+        return 0;
     }
 
     private static TreeNode build(int[][] tree) {
