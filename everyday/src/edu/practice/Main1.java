@@ -1,9 +1,9 @@
-import jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment;
+package edu.practice;
 
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();

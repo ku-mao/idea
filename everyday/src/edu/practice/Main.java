@@ -1,4 +1,4 @@
-package edu;
+package edu.practice;
 
 import java.io.*;
 import java.util.*;
