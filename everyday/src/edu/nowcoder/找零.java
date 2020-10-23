@@ -25,8 +25,9 @@ public class 找零 {
                 }
             }
             System.out.println(dp[num]);
-            if(s.nextInt()== 0)
+            if(s.nextInt()== 0) {
                 break;
+            }
         }
     }
 }
