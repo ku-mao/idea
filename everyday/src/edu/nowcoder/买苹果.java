@@ -17,6 +17,8 @@ public class 买苹果 {
         }else if(num%8==0) {
             System.out.print(num/8);
         }
-        else System.out.print(num/8 + 1);
+        else {
+            System.out.print(num/8 + 1);
+        }
     }
 }
