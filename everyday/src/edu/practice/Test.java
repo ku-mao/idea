@@ -17,24 +17,54 @@ public class Test {
 //        }
 
         //插入排序
-        for (int i = 0; i < a.length - 1; i++) {
-            int index = i + 1;
-            int tmp = a[i + 1];//待排序的元素
-            //找到待插入的位置
-            for (int j = i; j >= 0; j--) {
-                if (a[j] > tmp) {
-                    index = j;
-                } else {
-                    break;
-                }
-            }
-            for (int j = i; j >= index; j--) {
-                a[j + 1] = a[j];
-            }
-            a[index] = tmp;
-        }
+//        for (int i = 0; i < a.length - 1; i++) {
+//            int index = i + 1;
+//            int tmp = a[i + 1];//待排序的元素
+//            //找到待插入的位置
+//            for (int j = i; j >= 0; j--) {
+//                if (a[j] > tmp) {
+//                    index = j;
+//                } else {
+//                    break;
+//                }
+//            }
+//            for (int j = i; j >= index; j--) {
+//                a[j + 1] = a[j];
+//            }
+//            a[index] = tmp;
+//        }
+
+        //快排
+        quickSort(a);
         for (int i : a) {
             System.out.print(i + " ");
         }
+    }
+    //快速排序
+    private static void quickSort(int[] a) {
+        int i = 0;
+        int j = a.length - 1;
+        quickSortHelper(a, i, j);
+    }
+    private static void quickSortHelper(int[] a, int i, int j) {
+        if (i >= j) {
+            return;
+        }
+        int low = i;
+        int high = j;
+        int position = a[i];
+        while (low < high) {
+            while (low < high && a[high] > position) {
+                high--;
+            }
+            a[low] = a[high];
+            while (low < high && a[low] < position) {
+                low++;
+            }
+            a[high] = a[low];
+        }
+        a[low] = position;
+        quickSortHelper(a, i, low - 1);
+        quickSortHelper(a, low + 1, j);
     }
 }
