@@ -18,6 +18,52 @@ public class Sort {
             }
         }
     }
+    /**
+     * 冒泡优化1
+     * 对于整片数字来说是有顺序 但是整体没有顺序
+     * 采用标记标记, 若此次排序没有交换数据说明已经排好顺序
+     */
+    private void bubbleSort1(int[] array) {
+        int n = array.length;
+        boolean flag = true;//是否交换数据
+        for (int i = 1; i < n && flag; i++) {
+            flag = false;
+            for (int j = 0; j < n - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    int tmp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tmp;
+                    flag = true;
+                }
+            }
+        }
+    }
+
+    /**
+     * 冒泡排序优化2
+     * 对于前面大部分数据未排序, 后面少部分有序的情况, 第一种优化方案就效率不高了
+     * 现在记录排序上次最后一个交换的位置, 这个位置后面的数字肯定是有序的
+     */
+    private void bubbleSort2(int[] a) {
+        int n = a.length;
+        boolean flag = true;
+        int right = n - 1;
+        int last = right;
+        for (int i = 1; i < n && flag; i++) {
+            flag = false;
+            for (int j = 0; j < right; j++) {
+                if (a[j] > a[j + 1]) {
+                    int tmp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = tmp;
+                    flag = true;
+                    last = j;
+                }
+            }
+            right = last;
+        }
+    }
+
 
     /**
      * 插入排序
@@ -160,6 +206,15 @@ public class Sort {
 
 
     public static void main(String[] args) {
+        int[] arr = {3, 1, 9, 2, 4, 5};
+        Sort sort = new Sort();
+        //sort.bubbleSort1(arr);
+        sort.bubbleSort2(arr);
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+    public static void main1(String[] args) {
         System.out.println("请输入要排序数组的长度: ");
         Scanner scanner = new Scanner(System.in);
         int len = scanner.nextInt();
