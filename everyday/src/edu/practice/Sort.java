@@ -64,35 +64,141 @@ public class Sort {
         }
     }
 
-
     /**
-     * 插入排序
+     * 选择排序
      */
-    public void insertSort(int[] arr) {
-        for(int index = 0 ; index < arr.length -1 ; index++){ //已排好数组的最后一个元素的索引
-            int temp = arr[index+1];//待插入元素的值
-            int insert_index = index + 1;//待插入位置的索引,必须加1，因为可能会不交换
-
-            //找到待插入位置的索引
-            for(int i = index ; i >= 0 ; i-- ){
-                if(temp < arr[i]){
-                    insert_index = i;
-                }else {
-                    break;
+    public void selSort(int[] arr) {
+        for(int j = 0 ; j < arr.length - 1 ; j++) {
+            int min = j;//查找过程中最小元素的索引
+            for (int i = arr.length - 1; i > j; i--) {
+                if (arr[i] < arr[min]) {
+                    min = i;
                 }
             }
-            //后移插入元素后面的元素
-            for(int j = index ; j >= insert_index ; j--){
-                arr[j+1] = arr[j];
+            if(j != min) {
+                int temp = arr[j];
+                arr[j] = arr[min];
+                arr[min] = temp;
             }
-            arr[insert_index] = temp;
         }
     }
 
     /**
-     * 堆排序
+     * 选择排序优化
+     * 不管你的数据如何时间复杂度都是o(n^2)
+     * 但是我们可以同时找出最大和最小的, 减少排序次数
      */
 
+    private void selSort1(int[] arr) {
+        int n = arr.length;
+        int p = n - 1; //存放未排序中最大元素的下标
+        for(int i = 0; i < n/2; i++, p--) {
+            int min = i;
+            int max = i;
+            for (int j = i + 1; j <= p; j++) {
+                if (arr[min] > arr[j]) {
+                    min = j;
+                }
+                if (arr[max] < arr[j]) {
+                    max = j;
+                }
+            }
+            //把最大元素和p位置的元素交换
+            int tmp = arr[p];
+            arr[p] = arr[max];
+            arr[max] = tmp;
+
+            if (i != min) {
+                tmp = arr[i];
+                if (min == p) {//有一种特殊情况, 就是min刚好与p的的位置重合, 最大值交换后, min变成了最大的, 原来的最小的被换走了
+                    arr[i] = arr[max];
+                    arr[max] = tmp;
+                } else {
+                    arr[i] = arr[min];
+                    arr[min] = tmp;
+                }
+            }
+        }
+    }
+
+    /**
+     * 插入排序
+     */
+    private void insertSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {//待排元素下标
+            int tmp = arr[i];
+            int j = i;
+            while (j > 0 && arr[j - 1] > tmp) {
+                arr[j] = arr[j - 1];
+                j--;
+            }
+            arr[j] = tmp;
+        }
+    }
+
+    /**
+     * 插入排序的优化, 在查找待查元素的位置时, 采用2分查找
+     */
+    private void insertSort1(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            int tmp = arr[i];
+            int low = 0;
+            int high = i - 1;
+            while (low <= high) {
+                int mid = (low + high) / 2;
+                if (arr[mid] > tmp) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+            }
+            for (int j = i - 1; j >= low; j--) {
+                arr[j + 1] = arr[j];
+            }
+            arr[low] = tmp;
+        }
+    }
+
+
+    /**
+     * 快速排序
+     */
+    private void quickSort(int[] arr) {
+        int i = 0;
+        int j = arr.length - 1;
+        quickSortHelper(arr, i, j);
+    }
+    private void quickSortHelper(int[] arr, int i, int j) {
+        if (i >= j) {
+            return;
+        }
+        int low = i;
+        int high = j;
+        int position = arr[i];
+        while (low < high) {
+            while (low < high && arr[high] > position) {
+                high--;
+            }
+            arr[low] = arr[high];
+            while (low < high && arr[low] < position) {
+                low++;
+            }
+            arr[high] = arr[low];
+        }
+        arr[low] = position;
+        quickSortHelper(arr, i, low - 1);
+        quickSortHelper(arr, low + 1, j);
+    }
+
+
+
+
+
+    /**
+     * 堆排序
+     */
     public  void heapsort(int[] a) {
 
         for (int i = a.length - 1; i > 0; i--) {
@@ -135,57 +241,12 @@ public class Sort {
         }
     }
 
-    /**
-     * 快速排序
-     */
-    private void quickSort(int[] arr) {
-        int i = 0;
-        int j = arr.length - 1;
-        quickSortHelper(arr, i, j);
-    }
-    private void quickSortHelper(int[] arr, int i, int j) {
-        if (i >= j) {
-            return;
-        }
-        int low = i;
-        int high = j;
-        int position = arr[i];
-        while (low < high) {
-            while (low < high && arr[high] > position) {
-                high--;
-            }
-            arr[low] = arr[high];
-            while (low < high && arr[low] < position) {
-                low++;
-            }
-            arr[high] = arr[low];
-        }
-        arr[low] = position;
-        quickSortHelper(arr, i, low - 1);
-        quickSortHelper(arr, low + 1, j);
-    }
 
-    /**
-     * 选择排序
-     */
-    public void selSort(int[] arr) {
-        for(int j = 0 ; j < arr.length - 1 ; j++) {
-            int min = j;//查找过程中最小元素的索引
-            for (int i = arr.length - 1; i > j; i--) {
-                if (arr[i] < arr[min]) {
-                    min = i;
-                }
-            }
-            int temp = arr[j];
-            arr[j] = arr[min];
-            arr[min] = temp;
-        }
-    }
 
     /**
      * 希尔排序
      */
-    public  void shellSort(int[] a) {
+    private  void shellSort(int[] a) {
         // 计算出最大的h值
         int h = 1;
         while (h <= a.length / 3) {
@@ -206,10 +267,13 @@ public class Sort {
 
 
     public static void main(String[] args) {
-        int[] arr = {3, 1, 9, 2, 4, 5};
+        int[] arr = {1, 5, 2, 7, 6, 4, 9};
         Sort sort = new Sort();
         //sort.bubbleSort1(arr);
-        sort.bubbleSort2(arr);
+        //sort.bubbleSort2(arr);
+        //sort.selSort1(arr);
+        //sort.insertSort(arr);
+        sort.insertSort1(arr);
         for (int num : arr) {
             System.out.print(num + " ");
         }
