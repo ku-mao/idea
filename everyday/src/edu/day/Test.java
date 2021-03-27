@@ -1,5 +1,18 @@
 package edu.day;
 
+
+
+class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}
+
+
+
 public class Test {
     /**
      * 子数组最大乘积
@@ -22,9 +35,36 @@ public class Test {
         return res;
     }
 
+
+    /**
+     * 反转链表
+     * @param head
+     * @return
+     */
+    public ListNode reverseList(ListNode head) {
+        ListNode per = null;
+        ListNode next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = per;
+            per = head;
+            head = next;
+        }
+        return per;
+    }
+
+
     public static void main(String[] args) {
         Test t = new Test();
         double[] arr = {1.2, 0, 6, 0, -2, -5, 9, 0, 8};
-        System.out.println(t.maxProduct(arr));
+       // System.out.println(t.maxProduct(arr));
+
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        ListNode newHead = t.reverseList(head);
+        System.out.println(newHead.val);
+        System.out.println(newHead.next.val);
+        System.out.println(newHead.next.next.val);
     }
 }
