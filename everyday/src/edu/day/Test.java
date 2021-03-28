@@ -54,17 +54,43 @@ public class Test {
     }
 
 
+    /**
+     * 给定一个非负整数数组 A， A 中一半整数是奇数，一半整数是偶数。
+     * 对数组进行排序，以便当 A[i] 为奇数时，i 也是奇数；当 A[i] 为偶数时， i 也是偶数。
+     */
+    public int[] sortArrayByParity(int[] nums) {
+        int j = 1;
+        for (int i = 0; i < nums.length - 1; i=i+2) {
+            if (nums[i] % 2 != 0) {
+                while (nums[j] % 2 != 0) {
+                    j += 2;
+                }
+                int tmp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = tmp;
+            }
+        }
+        return  nums;
+    }
+
+
     public static void main(String[] args) {
         Test t = new Test();
-        double[] arr = {1.2, 0, 6, 0, -2, -5, 9, 0, 8};
-       // System.out.println(t.maxProduct(arr));
+//        double[] arr = {1.2, 0, 6, 0, -2, -5, 9, 0, 8};
+//        System.out.println(t.maxProduct(arr));
 
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        ListNode newHead = t.reverseList(head);
-        System.out.println(newHead.val);
-        System.out.println(newHead.next.val);
-        System.out.println(newHead.next.next.val);
+//        ListNode head = new ListNode(1);
+//        head.next = new ListNode(2);
+//        head.next.next = new ListNode(3);
+//        ListNode newHead = t.reverseList(head);
+//        System.out.println(newHead.val);
+//        System.out.println(newHead.next.val);
+//        System.out.println(newHead.next.next.val);
+
+        int[] arr = {2, 5, 7, 8};
+        int[] res = t.sortArrayByParity(arr);
+        for (int i : res) {
+            System.out.print(i + " ");
+        }
     }
 }
