@@ -74,6 +74,40 @@ public class Test {
     }
 
 
+    /**
+     * 一球从100米高度自由落下，
+     * 每次落地后反跳回原高度的一半；再落下，
+     * 求它在 第10次落地时，共经过多少米？第10次反弹多高？
+     */
+    public void calc() {
+        double sum = 100;
+        double num = 100;
+        for (int i = 2; i <= 10; i++) {
+            num = num / 2;
+            sum = sum + num * 2;
+        }
+        System.out.println("共经过了: " + sum + "米");
+        System.out.println("第10次反弹高度: " + (num/2)+ "米");
+    }
+
+
+
+
+    public int zuhe() {
+        int count = 0;
+        for (int i = 1; i < 5; i++) {
+            for (int j = 1; j < 5; j++) {
+                for (int k = 1; k < 5; k++) {
+                    if (i != j && i != k && j != k) {
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
+
     public static void main(String[] args) {
         Test t = new Test();
 //        double[] arr = {1.2, 0, 6, 0, -2, -5, 9, 0, 8};
@@ -87,10 +121,13 @@ public class Test {
 //        System.out.println(newHead.next.val);
 //        System.out.println(newHead.next.next.val);
 
-        int[] arr = {2, 5, 7, 8};
-        int[] res = t.sortArrayByParity(arr);
-        for (int i : res) {
-            System.out.print(i + " ");
-        }
+//        int[] arr = {2, 5, 7, 8};
+//        int[] res = t.sortArrayByParity(arr);
+//        for (int i : res) {
+//            System.out.print(i + " ");
+//        }
+
+//        t.calc();
+        System.out.println(t.zuhe());
     }
 }
