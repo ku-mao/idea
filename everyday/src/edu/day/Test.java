@@ -128,6 +128,44 @@ public class Test {
     }
 
 
+   /**
+    * 找第K大, 采用快排的思想
+     * @param a 数组
+     * @param n 数组长度
+     * @param K 第K大, 从1开始
+     * @return
+     */
+    public int findKth(int[] a, int n, int K) {
+        return find(a, 0, n - 1, K);
+    }
+
+    private int find(int[] a, int i, int j, int K) {
+        int position = quickSort(a, i, j); //从大到小排
+        if (position - i + 1 == K) {
+            return a[position];
+        } else if (position - i + 1 > K) {
+            return find(a, i, position - 1, K);
+        } else {
+            return find(a, position + 1, j, K - position + i - 1);
+        }
+    }
+
+    private int quickSort(int[] a, int i, int j) {
+        int tmp = a[i];
+        while (i < j) {
+            while (i < j && a[j] <= tmp) {
+                j--;
+            }
+            a[i] = a[j];
+            while (i < j && a[i] >= tmp) {
+                i++;
+            }
+            a[j] = a[i];
+        }
+        a[i] = tmp;
+        return i;
+    }
+
     public static void main(String[] args) {
         Test t = new Test();
 //        double[] arr = {1.2, 0, 6, 0, -2, -5, 9, 0, 8};
@@ -151,6 +189,9 @@ public class Test {
 //        System.out.println(t.zuhe());
 
 
-        System.out.println(t.buy(1200));
+//        System.out.println(t.buy(1200));//换汽水
+
+        int[] a = {2, 8, 6, 3, 9};
+        System.out.println(t.findKth(a, 5, 2));
     }
 }
