@@ -108,6 +108,26 @@ public class Test {
     }
 
 
+    /**
+     * 换饮料 3个可换一个
+     * @param num
+     */
+    public int buy(int num) {
+        if (num == 0) {
+            return 0;
+        }
+        int total = 0;
+        while (num > 2) {
+            total = total + num / 3 ;//能够换来的饮料
+            num = num / 3 +  num % 3;
+        }
+        if (num == 2) {
+            total = total + 1;
+        }
+        return total;
+    }
+
+
     public static void main(String[] args) {
         Test t = new Test();
 //        double[] arr = {1.2, 0, 6, 0, -2, -5, 9, 0, 8};
@@ -128,6 +148,9 @@ public class Test {
 //        }
 
 //        t.calc();
-        System.out.println(t.zuhe());
+//        System.out.println(t.zuhe());
+
+
+        System.out.println(t.buy(1200));
     }
 }
