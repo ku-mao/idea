@@ -1,6 +1,7 @@
 package edu.day;
 
 
+import java.util.Stack;
 
 class ListNode {
     int val;
@@ -166,6 +167,32 @@ public class Test {
         return i;
     }
 
+
+    /**
+     * 给定一个字符串A和其长度n，请返回一个bool值代表它是否为一个合法的括号串（只能由括号组成）
+     * @param A 數組
+     * @param n 數組長度
+     * @return
+     */
+    public boolean chkParenthesis(String A, int n) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            char c = A.charAt(i);
+            if (c == '(') {
+                stack.push(c);
+            } else if (c == ')') {
+                if (stack.isEmpty()) {
+                    return false;
+                } else {
+                    stack.pop();
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
+
+
     public static void main(String[] args) {
         Test t = new Test();
 //        double[] arr = {1.2, 0, 6, 0, -2, -5, 9, 0, 8};
@@ -191,7 +218,11 @@ public class Test {
 
 //        System.out.println(t.buy(1200));//换汽水
 
-        int[] a = {2, 8, 6, 3, 9};
-        System.out.println(t.findKth(a, 5, 2));
+//        int[] a = {2, 8, 6, 3, 9};
+//        System.out.println(t.findKth(a, 5, 2));  //寻找第K大的数字
+
+
+        String str = "(())()";
+        System.out.println(t.chkParenthesis(str, 6));
     }
 }
