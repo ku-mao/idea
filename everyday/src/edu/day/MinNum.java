@@ -20,7 +20,6 @@ public class MinNum {
         System.out.println(minNumberArray(arr));
     }
     private  static int minNumberArray(int [] array) {
-        //二分查找
         if (array == null || array.length == 0) {
             return 0;
         }
@@ -40,6 +39,7 @@ public class MinNum {
                     }
                 }
             }
+            //二分查找的方法
             if (array[left] <= array[mid]) {
                 left = mid;
             } else {
