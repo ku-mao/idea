@@ -1,6 +1,7 @@
 package edu.day;
 
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 class ListNode {
@@ -60,6 +61,7 @@ public class Test {
      * 对数组进行排序，以便当 A[i] 为奇数时，i 也是奇数；当 A[i] 为偶数时， i 也是偶数。
      */
     public int[] sortArrayByParity(int[] nums) {
+
         int j = 1;
         for (int i = 0; i < nums.length - 1; i=i+2) {
             if (nums[i] % 2 != 0) {
