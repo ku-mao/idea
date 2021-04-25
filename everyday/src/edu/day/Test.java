@@ -3,14 +3,14 @@ package edu.day;
 
 import java.util.LinkedList;
 import java.util.Stack;
-//class ListNode {
-//    int val;
-//    ListNode next = null;
-//
-//    ListNode(int val) {
-//        this.val = val;
-//    }
-//}
+class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}
 
 
 
